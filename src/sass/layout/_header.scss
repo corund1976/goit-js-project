@@ -1,10 +1,15 @@
+body {
+  //   background-color: red;
+  background-color: rgb(66, 65, 65);
+  //   background-image: url(../images/ZiClJf-1920w.jpg);
+}
 .header__logo {
   .background-logo {
     width: 210px;
     height: 180px;
     background-color: rgb(66, 65, 65);
     background: linear-gradient(#c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
-    // backdrop-filter: blur(1px);
+    backdrop-filter: blur(8px);
     border-radius: 50%;
     position: absolute;
     left: -105px;
@@ -50,9 +55,6 @@
 
 .header__container {
   padding-top: 80px;
-  //   padding-bottom: 100px;
-  //   position: relative;
-  //   background-color: black;
   .header__title {
     width: 220px;
     margin: 0 auto;
@@ -73,4 +75,45 @@
       margin-bottom: 40px;
     }
   }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .form-element {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 40px;
+    width: 270px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding-left: 30px;
+  }
+  .form__input {
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    .form-element {
+      margin-bottom: 0;
+    }
+  }
+}
+.form__input,
+.form__select {
+  position: relative;
+}
+.search-icon,
+.arrow-down-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  fill: rgba(255, 255, 255, 0.2);
 }
