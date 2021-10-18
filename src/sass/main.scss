@@ -5,6 +5,10 @@
 
 // Стили для файла с примером HTML-фрагмента
 
+@import './example';
+@import './footer';
+
+
 // U T I L S
 // @import './utils/mixins';
 // @import './utils/placeholders';
@@ -53,3 +57,4 @@
 // @import 'themes/module';
 // @import 'utils/module';
 // @import 'vendors/module';
+
