@@ -40,8 +40,6 @@ body {
 
   background: url(../images/backgimg_mobile.jpg) no-repeat center top;
 
-  max-width: 480px; // 280px
-
   @media screen and (min-width: 768px) {
     background: url(../images/backgimg_tablet.jpg) no-repeat center top;
   }
