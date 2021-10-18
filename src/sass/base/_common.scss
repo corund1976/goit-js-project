@@ -33,10 +33,20 @@ li {
 /* ======== Конец Сброс ====== */
 
 body {
-  // background-color: var(--bg-color-base);
+  min-height: 100vh;
+  // background-image: var(--bg-color-base);
   // color: var(--txt-color-base);
   font-family: 'Montserrat', sans-serif;
-  // letter-spacing: 0.04em;
-}
 
-// шрифты нужно 400, 600, 700, 900
+  background: url(../images/backgimg_mobile.jpg) no-repeat center top;
+
+  max-width: 480px; // 280px
+
+  @media screen and (min-width: 768px) {
+    background: url(../images/backgimg_tablet.jpg) no-repeat center top;
+  }
+
+  @media screen and (min-width: 1280px) {
+    background: url(../images/backgimg_desktop.jpg) no-repeat center top;
+  }
+}
