@@ -1,13 +1,5 @@
-body {
-  //   //   //   background-color: red;
-  //   //   //   background-color: rgb(66, 65, 65);
-  //   //   background-image: url(../images/ZiClJf-1920w.jpg);
-  //   background: url(../images/backgimg_desktop.jpg) no-repeat;
-  //   background-color: #c4c4c4;
-}
 .header {
   background: linear-gradient(rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 0.2) 100%);
-  //   background-image: url(../image/backgimg_desktop.jpg);
 }
 .header__logo {
   .background-logo {
@@ -50,8 +42,6 @@ body {
       height: 400px;
       left: -240px;
       top: -200px;
-      //   top: 0;
-      //   left: 0;
     }
     .header__logo-icon {
       width: 140px;
@@ -62,34 +52,34 @@ body {
   }
 }
 
-.header__container {
+.header__section {
   padding-top: 80px;
   padding-bottom: 10px;
   @media screen and (min-width: 768px) {
     padding-bottom: 80px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     padding-bottom: 90px;
   }
-  .header__title {
-    width: 220px;
-    margin: 0 auto;
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1.2;
-    color: #dc56c5;
-    @media screen and (min-width: 768px) {
-      font-size: 30px;
-      width: 370px;
-      margin-bottom: 30px;
-    }
-    @media screen and (min-width: 1280px) {
-      font-size: 50px;
-      width: 600px;
-      margin-bottom: 40px;
-    }
+}
+.header__title {
+  width: 220px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #dc56c5;
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    width: 370px;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 50px;
+    width: 600px;
+    margin-bottom: 40px;
   }
 }
 form {
@@ -112,7 +102,7 @@ form {
       margin-right: 20px;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     flex-direction: row;
     justify-content: center;
     .form-element {
