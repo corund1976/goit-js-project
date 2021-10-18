@@ -1,14 +1,21 @@
 body {
-  //   background-color: red;
-  background-color: rgb(66, 65, 65);
-  //   background-image: url(../images/ZiClJf-1920w.jpg);
+  //   //   //   background-color: red;
+  //   //   //   background-color: rgb(66, 65, 65);
+  //   //   background-image: url(../images/ZiClJf-1920w.jpg);
+  //   background: url(../images/backgimg_desktop.jpg) no-repeat;
+  //   background-color: #c4c4c4;
+}
+.header {
+  background: linear-gradient(rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 0.2) 100%);
+  //   background-image: url(../image/backgimg_desktop.jpg);
 }
 .header__logo {
   .background-logo {
     width: 210px;
     height: 180px;
-    background-color: rgb(66, 65, 65);
-    background: linear-gradient(#c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
+    background: linear-gradient(#c4c4c4 3%, rgba(196, 196, 196, 0) 0%);
+    // background: linear-gradient(rgba(196, 196, 196, 0.3), rgba(196, 196, 196, 0.3)),
+    //   linear-gradient(#c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
     backdrop-filter: blur(8px);
     border-radius: 50%;
     position: absolute;
@@ -43,6 +50,8 @@ body {
       height: 400px;
       left: -240px;
       top: -200px;
+      //   top: 0;
+      //   left: 0;
     }
     .header__logo-icon {
       width: 140px;
@@ -55,6 +64,13 @@ body {
 
 .header__container {
   padding-top: 80px;
+  padding-bottom: 10px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 80px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-bottom: 90px;
+  }
   .header__title {
     width: 220px;
     margin: 0 auto;
