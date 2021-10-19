@@ -26,10 +26,12 @@ const sendServerRequest = async function (userQuery, country = '') {
   console.log(url);
   
   const response = await fetch(url);
-  const events = await response.json();
-  console.log(events);
-  
-  return events;
+
+
+  if (response.status >= 200 && response.status < 300) {
+    const events = await response.json();
+    return events;
+  } else return Promise.reject(console.log('Requst error'));
 };
 
 const renderMarkup = function (searchedEvents) {
