@@ -1,15 +1,12 @@
 .header {
-  background: linear-gradient(rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 0.2) 100%);
-  // width: 100%;
+  background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5));
 }
 .header__logo {
   .background-logo {
     width: 210px;
     height: 180px;
-    background: linear-gradient(#c4c4c4 3%, rgba(196, 196, 196, 0) 0%);
-    // background: linear-gradient(rgba(196, 196, 196, 0.3), rgba(196, 196, 196, 0.3)),
-    //   linear-gradient(#c4c4c4 0%, rgba(196, 196, 196, 0) 100%);
-    backdrop-filter: blur(8px);
+    background: linear-gradient(rgba(196, 196, 196, 0.03), rgba(196, 196, 196, 0));
+    backdrop-filter: blur(30px);
     border-radius: 50%;
     position: absolute;
     left: -105px;
@@ -89,13 +86,16 @@ form {
   align-items: center;
   .form-element {
     background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
     height: 40px;
     width: 270px;
     border: none;
     border-radius: 20px;
-    color: var(--placeholder-color);
     padding-left: 30px;
+    color: var(--placeholder-color);
+    &::placeholder {
+      color: var(--placeholder-color);
+    }
   }
   .form__input {
     margin-bottom: 20px;
