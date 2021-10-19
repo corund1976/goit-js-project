@@ -29,7 +29,7 @@ const sendServerRequest = async function (userQuery) {
     url = `${BASE_URL}events.json?keyword=${userQuery}&apikey=${API_KEY}`;
   }
   const response = await fetch(url);
-  console.log(response.status);
+  // console.log(response.status);
   if (response.status >= 200 && response.status < 300) {
     const events = await response.json();
     return events;
