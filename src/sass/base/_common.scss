@@ -39,11 +39,14 @@ body {
   font-family: 'Montserrat', sans-serif;
 
   background: url(../images/backgimg_mobile.jpg) no-repeat center top;
+  background-size: 100% 364px;
   @media screen and (min-width: 768px) {
     background: url(../images/backgimg_tablet.jpg) no-repeat center top;
+    background-size: 100% 364px;
   }
 
   @media screen and (min-width: 1280px) {
     background: url(../images/backgimg_desktop.jpg) no-repeat center top;
+    background-size: 100% 446px;
   }
 }
