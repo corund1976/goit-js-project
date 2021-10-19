@@ -1,0 +1,102 @@
+.events-section{
+    padding-top: 43px;
+    background-color: black;
+
+}
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -14px;
+    margin-top: -14px;
+
+    @media screen and (min-width:768px) {
+        margin-top:-27px;
+        margin-left:-27px;
+    }
+
+    @media screen and (min-width:1280px) {
+        margin-top:-70px;
+        margin-left:-70px;
+    }
+
+}
+.card__item{
+    position: relative;
+    margin-top:14px;
+    margin-left:14px;
+    flex-basis: calc(100% / 2 - 14px);
+
+    @media screen and (min-width: 768px) {
+        margin-top:27px;
+        margin-left:27px;
+        flex-basis: calc(100% / 3 - 27px);
+    }
+
+    @media screen and (min-width:1280px) {
+        margin-top:70px;
+        margin-left:70px;
+        flex-basis: calc(100% / 4 - 70px);
+    }
+}
+.card__item__name-of-group{
+    color:var(--header-primary);
+    font-weight: 700;
+    font-size: 16px;
+}
+.card__item__elements{
+    display: flex;
+    justify-content: center;
+}
+.card__item__date-to-begin{
+    font-size: 16px;
+    font-weight: 400;
+    color:var(--header-secondary);
+}
+.card__item__location{
+    font-size: 14px;
+    font-weight: 600;
+    color:var(--header-secondary);
+    position: relative;
+    &::before{
+        height: 10px;
+        width: 7px;
+        content: '';
+        background-image: url('../images/card/location.png');
+        position: absolute;
+        top: 3px;
+        right:110px;
+        @media screen and (max-width:767px) {
+            right: 60px;
+        }
+    }
+    
+}
+.card__item__img{
+    height: 161px;
+    width: 128px;
+    padding-top: 9px;
+
+    object-fit: cover;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    @media screen and (min-width:768px) {
+        height: 227px;
+        width: 180px;
+    }
+}
+.border-card{
+    border: 1px solid rgba(220, 86, 197, 0.3);
+    width: 101px;
+    height: 111px;
+    position: absolute;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    left: 36px;
+    top: 0;
+    @media screen and (min-width:768px) {
+        height: 143px;
+        width: 153px;
+        left: 12px;
+    }
+}
