@@ -1,0 +1,20 @@
+.background_image {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  // background-color: black;
+  background-image: url(../images/backgimg_desktop.jpg), url(../images/bg_body_mobile.png);
+
+  background-size: auto 364px, cover;
+
+  background-position: top center, center 364px;
+
+  background-repeat: no-repeat, no-repeat;
+
+  @media screen and (min-width: 1280px) {
+    background-size: auto 446px, cover;
+
+    background-position: top center, center 446px;
+  }
+}
