@@ -69,6 +69,7 @@
   font-weight: 700;
   font-size: 16px;
 }
+}
 .card__item__elements {
   display: flex;
   justify-content: center;
@@ -78,7 +79,6 @@
   font-weight: 400;
   color: var(--header-secondary);
 }
-<<<<<<< HEAD
 .card__item__location{
     font-size: 14px;
     font-weight: 600;
@@ -97,25 +97,13 @@
         width: 7px;
         height: 10px;
     }
-=======
+}
 .card__item__location {
   font-size: 14px;
   font-weight: 600;
   color: var(--header-secondary);
   position: relative;
-  &::before {
-    height: 10px;
-    width: 7px;
-    content: '';
-    background-image: url('../images/card/location.png');
-    position: absolute;
-    top: 3px;
-    right: 110px;
-    @media screen and (max-width: 767px) {
-      right: 96px;
-    }
-  }
->>>>>>> origin/dev
+  
 }
 .card__item__img {
   height: 161px;
