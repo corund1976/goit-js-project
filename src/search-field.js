@@ -10,12 +10,12 @@ const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
 
 // ФУНКЦИЯ ПОИСКА ПО ЗАПРОСУ
 const search = async function () {
-    // БЕРЁМ ДАННЫЕ ПОЛЬЗОВАТЕЛЯ
+  // БЕРЁМ ДАННЫЕ ПОЛЬЗОВАТЕЛЯ
   const userQuery = searchFieldEl.value;
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
   sendServerRequest(userQuery);
   const reply = await sendServerRequest(userQuery);
-//   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
+  //   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
   renderMarkup(reply);
 };
 
@@ -27,9 +27,28 @@ const sendServerRequest = async function (userQuery) {
   return events;
 };
 
-const renderMarkup = function (events) {
-    console.log(events)
-  // ФУНКЦИЯ  ДЛЯ РЕНДЕРИНГА РАЗМЕТКИ (АНЯ)
+const renderMarkup = function (searchedEvents) {
+  let render = '';
+  for (let i = 0; i < searchedEvents.page.totalElements; i++) {
+    render += ` <li class="card__item">
+        <a href="" class="card__item__link link">
+            <div class="border-card"></div>
+            <img src="${searchedEvents._embedded.events[i].images.map(img => img.url)[0]}" 
+                alt="img with singer"
+                class="card__item__img card__item__elements">
+            <h3 class="card__item__name-of-group card__item__elements"> ${
+              searchedEvents._embedded.events[i].name
+            }</h3>
+            <p class="card__item__date-to-begin card__item__elements">${
+              searchedEvents._embedded.events[i].dates.start.localDate
+            }</p>
+            <p class="card__item__location card__item__elements"> ${searchedEvents._embedded.events[
+              i
+            ]._embedded.venues.map(item => (item.name ? item.name : item.address?.line1))}</p>
+        </a>
+    </li>`;
+  }
+  document.querySelector('.card').insertAdjacentHTML('beforeend', render);
 };
 
 const showCountries = function () {
@@ -45,25 +64,6 @@ const renderListMarkup = function (config) {
 };
 searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
 searchByCountryEl.addEventListener('click', debounce(showCountries, DEBOUNCE_DELAY));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // СТАРАЯ ВЕРСИЯ - ФУНКЦИЯ ЗАПРОСА НА СЕРВЕР ДЛЯ ПОЛУЧЕНИЯ СПИСКА СТРАН
 
