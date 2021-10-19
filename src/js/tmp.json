@@ -1,0 +1,193 @@
+{
+"_embedded": {
+"events": [
+{
+"name": "Eurovision in Concert 2022",
+"type": "event",
+"id": "Z698xZbpZ17a6_9",
+"test": false,
+"url": "https://www.ticketmaster.nl/event/eurovision-in-concert-2022-tickets/247657?language=en-us",
+"locale": "en-us",
+"images": [],
+"sales": {},
+"dates": {},
+"classifications": [],
+"promoter": {},
+"promoters": [],
+"priceRanges": [],
+"_links": {},
+"_embedded": {
+"venues": [
+{
+"type": "venue",
+"id": "Z598xZbpZAdAF",
+"test": false,
+"url": "https://www.ticketmaster.nl/venue/afas-live-amsterdam-tickets/afas/107",
+"locale": "en-us",
+"images": [
+{
+"url": "https://s1.ticketm.net/dam/v/9df/9f64015b-ca63-4fa8-b99b-f2b04a0489df_370432_SOURCE.jpg",
+"width": 3280,
+"height": 1561,
+"fallback": false,
+"attribution": "CC BY 3.0 via Wikipedia"
+},
+{
+"ratio": "16_9",
+"url": "https://media.ticketmaster.eu/netherlands/851ebd1e1b1f1db00f3f4cbbd8cc2319.png",
+"width": 205,
+"height": 115,
+"fallback": false
+}
+],
+"postalCode": "1101DS",
+"timezone": "Europe/Amsterdam",
+"city": {
+"name": "Amsterdam"
+},
+"country": {
+"name": "Netherlands",
+"countryCode": "NL"
+},
+"address": {
+"line1": "Arena Boulevard 590"
+},
+"location": {
+"longitude": "4.94415",
+"latitude": "52.31236"
+},
+"upcomingEvents": {
+"_total": 57,
+"mfx-nl": 57
+},
+"_links": {
+"self": {
+"href": "/discovery/v2/venues/Z598xZbpZAdAF?locale=en-us"
+}
+}
+}
+],
+"attractions": [
+{
+"name": "Eurovision In Concert",
+"type": "attraction",
+"id": "K8vZ917o6a7",
+"test": false,
+"url": "https://www.ticketmaster.nl/artist/eurovision-in-concert-tickets/921530?language=en-us",
+"locale": "en-us",
+"images": [
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_TABLET_LANDSCAPE_16_9.jpg",
+"width": 1024,
+"height": 576,
+"fallback": false
+},
+{
+"ratio": "4_3",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_CUSTOM.jpg",
+"width": 305,
+"height": 225,
+"fallback": false
+},
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+"width": 2048,
+"height": 1152,
+"fallback": false
+},
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_RETINA_PORTRAIT_16_9.jpg",
+"width": 640,
+"height": 360,
+"fallback": false
+},
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_EVENT_DETAIL_PAGE_16_9.jpg",
+"width": 205,
+"height": 115,
+"fallback": false
+},
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_RECOMENDATION_16_9.jpg",
+"width": 100,
+"height": 56,
+"fallback": false
+},
+{
+"ratio": "3_2",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_RETINA_PORTRAIT_3_2.jpg",
+"width": 640,
+"height": 427,
+"fallback": false
+},
+{
+"ratio": "3_2",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_ARTIST_PAGE_3_2.jpg",
+"width": 305,
+"height": 203,
+"fallback": false
+},
+{
+"ratio": "3_2",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_TABLET_LANDSCAPE_3_2.jpg",
+"width": 1024,
+"height": 683,
+"fallback": false
+},
+{
+"ratio": "16_9",
+"url": "https://s1.ticketm.net/dam/a/bf4/19232ccc-60e1-47c7-97be-64346cf83bf4_1402791_RETINA_LANDSCAPE_16_9.jpg",
+"width": 1136,
+"height": 639,
+"fallback": false
+}
+],
+"classifications": [
+{
+"primary": true,
+"segment": {
+"id": "KZFzniwnSyZfZ7v7nJ",
+"name": "Music"
+},
+"genre": {
+"id": "KnvZfZ7vAev",
+"name": "Pop"
+},
+"subGenre": {
+"id": "KZazBEonSMnZfZ7vk1t",
+"name": "Pop"
+},
+"type": {
+"id": "KZAyXgnZfZ7v7nI",
+"name": "Undefined"
+},
+"subType": {
+"id": "KZFzBErXgnZfZ7v7lJ",
+"name": "Undefined"
+},
+"family": false
+}
+],
+"upcomingEvents": {
+"_total": 1,
+"mfx-nl": 1
+},
+"_links": {
+"self": {
+"href": "/discovery/v2/attractions/K8vZ917o6a7?locale=en-us"
+}
+}
+}
+]
+}
+}
+]
+},
+"_links": {},
+"page": {}
+}
