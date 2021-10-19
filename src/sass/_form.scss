@@ -1,0 +1,23 @@
+.container {
+    background-color: teal;
+}
+.form-element {
+    background-color:rgba(255, 255, 255, 0.2);
+    height: 40px;
+    width: 270px;
+    border: none;
+    border-radius: 20px;
+    color: var(--footer-color);
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.form-element:focus,
+.form-element:active{
+    outline: 3px solid grey;
+}
+
+// .visually-hidden {
+//     color: red;
+//     background-color: blue;
+// }
