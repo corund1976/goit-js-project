@@ -1,2 +1,2 @@
 import './sass/main.scss';
-import './js/content';
+import './js/main_content_render';
