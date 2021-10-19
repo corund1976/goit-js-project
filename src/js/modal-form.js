@@ -1,3 +1,5 @@
+import { sendServerRequest, search } from './search-field';
+
 const refs = {
   eventsCardsList: document.querySelector('.events-section .card'),
   modalBtnCloseNode: document.querySelector('.backdrop .modal__closed'),
@@ -25,3 +27,4 @@ function onKeyPress(e) {
     refs.modalNode.classList.toggle('is-hidden');
   }
 }
+// console.log(sendServerRequest());
