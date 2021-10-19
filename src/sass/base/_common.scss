@@ -61,8 +61,8 @@ body {
   //   // background-color: var(--background-primary);
   // }
 
-  @media screen and (min-width: 1280px) {
-    background-size: 100% 446px, cover;
+  @media screen and (min-width: 1050px) {
+    background-size: auto 446px, cover;
 
     background-position: top center, center 446px;
 
