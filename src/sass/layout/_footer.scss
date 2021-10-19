@@ -1,0 +1,27 @@
+.footer {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 100px;
+
+  @media screen and (min-width: 480px) {
+    padding-bottom: 20px;
+  }
+}
+.footer__paragraph {
+  width: 260px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 auto;
+  color: var(--footer-color);
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .footer_heart {
+    color: rgb(219, 7, 7);
+    font-size: 18px;
+  }
+}
