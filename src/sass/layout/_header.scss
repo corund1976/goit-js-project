@@ -1,5 +1,6 @@
 .header {
   background: linear-gradient(rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 0.2) 100%);
+  // width: 100%;
 }
 .header__logo {
   .background-logo {
@@ -70,7 +71,7 @@
   font-size: 18px;
   font-weight: 900;
   line-height: 1.2;
-  color: #dc56c5;
+  color: var(--header-primary);
   @media screen and (min-width: 768px) {
     font-size: 30px;
     width: 370px;
@@ -93,7 +94,7 @@ form {
     width: 270px;
     border: none;
     border-radius: 20px;
-    color: white;
+    color: var(--placeholder-color);
     padding-left: 30px;
   }
   .form__input {
@@ -119,5 +120,5 @@ form {
   position: absolute;
   top: 10px;
   left: 230px;
-  fill: rgba(255, 255, 255, 0.2);
+  fill: var(--placeholder-color);
 }
