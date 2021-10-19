@@ -35,41 +35,7 @@ li {
 body {
   font-family: 'Montserrat', sans-serif;
 
-  // min-height: 100vh;
+  background-color: var(--background-primary);
 
-  // background-color: var(--background-primary);
-
-  // background-image: url(../images/backgimg_desktop.jpg), url(../images/bg_body_mobile.png);
-
-  // background-size: auto 364px, 100%;
-
-  // background-position: top center, center 364px;
-
-  // background-repeat: no-repeat, no-repeat;
-
-  // background: url(../images/backgimg_mobile.jpg) no-repeat center top,
-  //   url(../images/bg_body_mobile.png);
-
-  // background-size: 100% 364px;
-  // background-color: var(--background-primary);
-
-  // @media screen and (min-width: 768px) {
-  //   background: url(../images/backgimg_tablet.jpg) no-repeat center top,
-  //     url(../images/bg_body_tablet.jpg);
-
-  //   background-size: 100% 364px;
-  //   // background-color: var(--background-primary);
-  // }
-
-  // @media screen and (min-width: 1050px) {
-  //   background-size: auto 446px, cover;
-
-  //   background-position: top center, center 446px;
-
-  // background: url(../images/backgimg_desktop.jpg) no-repeat center top,
-  //   url(../images/bg_body_desktop.jpg);
-
-  // background-size: 100% 446px;
-  // background-color: var(--background-primary);
-  // }
+  position: relative;
 }

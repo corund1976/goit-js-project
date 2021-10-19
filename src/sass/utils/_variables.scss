@@ -1,4 +1,5 @@
 :root {
+  /* палитра цветов */
   --background-primary: #0e0e0e;
   --header-primary: #dc56c5;
   --header-secondary: #ffffff;
@@ -7,22 +8,6 @@
   --modal-background: #fff2fd;
   --placeholder-color: #939393;
   --footer-color: rgba(147, 147, 147, 1);
-
-  /* цвет фон */
-  // --bg-color-base: #ffffff;
-  // --bg-color-alt: #fff5f6;
-
-  /* цвет кнопка */
-  // --btn-color__base: #d41443;
-  // --btn-color__alt: #ffffff;
-  // --btn-color__base-hover: #c7133e;
-  // --btn-color__alt-hover: #ecebeb;
-
-  /* цвет текста */
-  // --txt-color-base: #907e82;
-
-  /* цвет акцента */
-  // --accent-color: #d41443;
 
   /* параметры transition для hover */
   --transition-timing: 250ms;
