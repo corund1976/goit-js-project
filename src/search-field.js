@@ -29,8 +29,11 @@ const sendServerRequest = async function (userQuery) {
     url = `${BASE_URL}events.json?keyword=${userQuery}&apikey=${API_KEY}`;
   }
   const response = await fetch(url);
-  const events = await response.json();
-  return events;
+  console.log(response.status);
+  if (response.status >= 200 && response.status < 300) {
+    const events = await response.json();
+    return events;
+  } else return Promise.reject(console.log('Requst error'));
 };
 
 const renderMarkup = function (searchedEvents) {
@@ -77,6 +80,9 @@ const renderListMarkup = function (config) {
 };
 searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
 searchByCountryEl.addEventListener('click', debounce(showCountries, DEBOUNCE_DELAY));
+document.querySelector('form').addEventListener('submit', e => {
+  e.preventDefault();
+});
 search();
 // СТАРАЯ ВЕРСИЯ - ФУНКЦИЯ ЗАПРОСА НА СЕРВЕР ДЛЯ ПОЛУЧЕНИЯ СПИСКА СТРАН
 
