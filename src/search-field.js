@@ -7,24 +7,34 @@ const DEBOUNCE_DELAY = 300;
 
 const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
 const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
-
+let userQuery;
+let country;
 // ФУНКЦИЯ ПОИСКА ПО ЗАПРОСУ
 const search = async function () {
   // БЕРЁМ ДАННЫЕ ПОЛЬЗОВАТЕЛЯ
   const userQuery = searchFieldEl.value;
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
-  sendServerRequest(userQuery);
-  const reply = await sendServerRequest(userQuery);
+  sendServerRequest(userQuery, country);
+  const reply = await sendServerRequest(userQuery,country);
   //   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
   renderMarkup(reply);
 };
 
 // ФУНКЦИЯ ДЛЯ ЗАПРОСОВ НА СЕРВЕР
-const sendServerRequest = async function (userQuery) {
-  let url = `${BASE_URL}events.json?keyword=${userQuery}&apikey=${API_KEY}`;
+const sendServerRequest = async function (userQuery, country = '') {
+  let url;
+  if (userQuery === '') {
+    url = `${BASE_URL}events.json?apikey=${API_KEY}`;
+  } else {
+    url = `${BASE_URL}events.json?keyword=${userQuery}&countryCode=${country}&apikey=${API_KEY}`;
+  }
+
   const response = await fetch(url);
-  const events = await response.json();
-  return events;
+
+  if (response.status >= 200 && response.status < 300) {
+    const events = await response.json();
+    return events;
+  } else return Promise.reject(console.log('Requst error'));
 };
 
 const renderMarkup = function (searchedEvents) {
@@ -52,6 +62,9 @@ const renderMarkup = function (searchedEvents) {
 };
 
 const showCountries = function () {
+    country = searchByCountryEl.value;
+    console.log(country);
+    
   renderListMarkup(config);
 };
 // ФУНКЦИЯ ДЛЯ РЕНДЕРИНГА РАЗМЕТКИ ВЫПАДАЮЩЕГО СПИСКА
@@ -63,33 +76,4 @@ const renderListMarkup = function (config) {
   searchByCountryEl.insertAdjacentHTML('beforeend', markup);
 };
 searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
-searchByCountryEl.addEventListener('click', debounce(showCountries, DEBOUNCE_DELAY));
-
-// СТАРАЯ ВЕРСИЯ - ФУНКЦИЯ ЗАПРОСА НА СЕРВЕР ДЛЯ ПОЛУЧЕНИЯ СПИСКА СТРАН
-
-// const searchCountry = async function () {
-//     let url2 = `${BASE_URL}venues.json?&apikey=${API_KEY}`;
-//     const venues1 = await fetch(url2)
-//     const { _embedded } = await venues1.json()
-//     console.log(_embedded)
-//     const countryNames= _embedded.venues
-//     // const { _embedded: { venues } } = venuesList
-//     renderListMarkup(countryNames)
-//     // return countryNames
-// }
-
-// searchByCountryEl.addEventListener('click', debounce(searchCountry, DEBOUNCE_DELAY))
-
-// ВАРИАНТ ЗАПРОСА НА СЕРВЕР ЧЕРЕЗ ПРОМИСЫ
-
-//https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey={apikey}
-
-// const sendServerRequest = function (userQuery) {
-
-//     let url = `${BASE_URL}events.json?keyword=${userQuery}&apikey=${API_KEY}`;
-
-//     fetch(url).then(response=> response.json()).then(response=> console.log(response))
-//     // const events = await response.json()
-//     // .then(console.log(events))
-//     // renderMarkup(response)
-// }
+searchByCountryEl.addEventListener('change', debounce(showCountries, DEBOUNCE_DELAY));

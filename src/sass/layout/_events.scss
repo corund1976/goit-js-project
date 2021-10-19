@@ -1,101 +1,141 @@
-.events-section{
-    padding-top: 43px;
+.events-section {
+  padding-top: 51px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 55px;
+  }
 }
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left:-14px;
-    margin-top:-14px;
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    @media screen and (min-width:768px) {
-        margin-top:-27px;
-        margin-left:-27px;
-    }
+  margin-left: -14px;
+  margin-top: -14px;
 
-    @media screen and (min-width:1280px) {
-        margin-top:-70px;
-        margin-left:-70px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-top: -27px;
+    margin-left: -27px;
+  }
 
+  @media screen and (min-width: 1280px) {
+    margin-top: -70px;
+    margin-left: -70px;
+  }
 }
-.card__item{
-    position: relative;
-    margin-top:14px;
-    margin-left:14px;
-    flex-basis: calc(100% / 2 - 14px);
-    display: flex;
+.card__item {
+  position: relative;
 
-    @media screen and (min-width: 768px) {
-        margin-top:27px;
-        margin-left:27px;
-        flex-basis: calc(100% / 3 - 27px);
-    }
+  margin-top: 14px;
+  margin-left: 14px;
+  flex-basis: calc(320px / 2 - 14px);
 
-    @media screen and (min-width:1280px) {
-        margin-top:70px;
-        margin-left:70px;
-        flex-basis: calc(100% / 4 - 70px);
-    }
+  @media screen and (min-width: 768px) {
+    margin-top: 27px;
+    margin-left: 27px;
+    flex-basis: calc(100% / 3 - 27px);
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 70px;
+    margin-left: 70px;
+    flex-basis: calc(100% / 4 - 70px);
+  }
 }
 .card__item__name-of-group{
     color:var(--header-primary);
     font-weight: 700;
     font-size: 16px;
+
+    width: 150px;
+    overflow:hidden;
+    white-space:nowrap;
+    @media screen and (max-width:768px) {
+        width:130px;
+    }
+}
+.marquee{
+    transform: translateX(0%);
+    transition-duration: 4000ms;
+    transition-timing-function: linear;
+    &:hover{
+        transform: translateX(calc(-100% + 145px));
+    }
 }
 .card__item__elements{
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
-.card__item__date-to-begin{
-    font-size: 16px;
-    font-weight: 400;
-    color:var(--header-secondary);
+.card__item__name-of-group {
+  color: var(--header-primary);
+  font-weight: 700;
+  font-size: 16px;
+}
+.card__item__date-to-begin {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--header-secondary);
 }
 .card__item__location{
     font-size: 14px;
     font-weight: 600;
     color:var(--header-secondary);
-    position: relative;
-    &::before{
-        height: 10px;
-        width: 7px;
-        content: '';
-        background-image: url('../images/card/location.png');
-        position: absolute;
-        top: 3px;
-        right:110px;
-        @media screen and (max-width:767px) {
-            right: 96px;
-        }
-    }
-    
-}
-.card__item__img{
-    height: 161px;
-    width: 128px;
-    padding-top: 9px;
 
-    object-fit: cover;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    @media screen and (min-width:768px) {
-        height: 227px;
-        width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 150px;
+}
+.marquee-location{
+    transform: translateX(0%);
+    transition-duration: 4000ms;
+    transition-timing-function: linear;
+    &:hover{
+        transform: translateX(calc(-100% + 145px));
     }
 }
-.border-card{
-    border: 1px solid rgba(220, 86, 197, 0.3);
-    width: 101px;
-    height: 111px;
-    position: absolute;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    left: 36px;
-    top: 0;
+.card__item__location-img{
+    width: 8px;
+    height: 10px;
+    margin-right: 2px;
+    object-fit:contain;
+    display: inline;
     @media screen and (min-width:768px) {
-        height: 143px;
-        width: 153px;
-        left: 12px;
+        width: 7px;
+        height: 10px;
     }
+}
+.card__item__location {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--header-secondary);
+  position: relative;
+  
+}
+.card__item__img {
+  height: 161px;
+  width: 128px;
+  padding-top: 9px;
+
+  object-fit: cover;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  @media screen and (min-width: 768px) {
+    height: 227px;
+    width: 180px;
+  }
+}
+.border-card {
+  border: 1px solid rgba(220, 86, 197, 0.3);
+  width: 101px;
+  height: 111px;
+  position: absolute;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  left: 36px;
+  top: 0;
+  @media screen and (min-width: 768px) {
+    height: 143px;
+    width: 153px;
+    left: 12px;
+  }
 }
