@@ -28,6 +28,7 @@ const sendServerRequest = async function (userQuery) {
 };
 
 const renderMarkup = function (events) {
+    console.log(events)
   // ФУНКЦИЯ  ДЛЯ РЕНДЕРИНГА РАЗМЕТКИ (АНЯ)
 };
 
