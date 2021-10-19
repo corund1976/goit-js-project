@@ -1,33 +1,87 @@
-// .button {
-//   cursor: pointer;
-//   border: none;
-//   border-radius: 20px;
-// }
-
-// Красная кнопка с белым текстом
-// .btn--first {
-//   color: var(--btn-color__alt);
-//   background-color: var(--btn-color__base);
-//   transition: background-color var(--transition-timing) var(--transition-function);
-//   &:hover {
-//     background: var(--btn-color__base-hover);
-//   }
-//   &:focus {
-//     background: var(--btn-color__base-hover);
-//     outline: none;
-//   }
-// }
-
-// Белая Кнопка с красным текстом
-// .btn--second {
-//   color: var(--btn-color__base);
-//   background-color: var(--btn-color__alt);
-//   transition: background-color var(--transition-timing) var(--transition-function);
-//   &:hover {
-//     background: var(--btn-color__alt-hover);
-//   }
-//   &:focus {
-//     background: var(--btn-color__alt-hover);
-//     outline: none;
-//   }
-// }
+.modal-button {
+    display: block;
+    margin-right: auto;
+    padding: 11px 17px 11px 17px;
+    width: 145px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.21;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--header-secondary);
+    background-color: var(--btn-background);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (max-width: 767px) {
+      margin-left: auto;
+    }
+  }
+  
+  .modal-button:not(:last-child) {
+    margin-bottom: 20px;
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 30px;
+    }
+  }
+  
+  .modal-button:hover,
+  .modal-button:focus {
+    background-color: var(--header-primary);
+    color: var(--header-secondary);
+    cursor: pointer;
+  }
+  
+  .btn-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    margin-top: 25px;
+    padding: 0px;
+    width: 230px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.11;
+    border-color: var(--btn-background);
+    border-radius: 5px;
+    color: var(--btn-background);
+    background-color: var(--modal-background);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and(min-width: 768px){
+      idth: 255px;
+      height: 40px;
+      margin-top: 20px;
+  
+    }
+    @media screen and(min-width: 1280px) {
+      width: 255px;
+      height: 50px;
+      margin-top: 45px;
+    }
+    &:hover,
+    &:focus {
+      background-color: var(--header-primary);
+      color: var(--header-secondary);
+      cursor: pointer;
+    }
+  }
+  .btn-closed {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 50%;
+    left: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    @media screen and (min-width: 1280px) {
+      width: 25px;
+      height: 25px;
+    }
+  }  

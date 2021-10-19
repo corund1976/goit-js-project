@@ -16,10 +16,10 @@
 // @import './base/section';
 // C O M P O N E N T S
 // @import './components/logo';
-// @import './components/button';
+@import './components/button';
 // @import './components/title';
 // @import './components/mobile-menu';
-// @import './components/backdrop-buy-now';
+@import './components/backdrop';
 // @import './components/modal-buy-now';
 // @import './components/modal-form-buy-now';
 // L A Y O U T
@@ -29,7 +29,7 @@
 @import './layout/header';
 @import './layout/events';
 @import './layout/footer';
-// @import './layout/gallery';
+@import './layout/modalEvent';
 // @import './layout/header';
 // @import './layout/products';
 // @import './layout/reviews';
