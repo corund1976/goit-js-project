@@ -1,4 +1,3 @@
-
 .modal {
   position: fixed;
   top: 80%;
@@ -19,6 +18,7 @@
     flex-direction: column;
   }
   &__closed {
+    z-index: 100;
     position: absolute;
     padding: 1px 6px;
     top: 14px;
@@ -151,12 +151,6 @@
 .info-img {
   display: block;
 }
-
-
-
-
-
-
 
 .modal__icon-barcode {
   display: inline-block;
