@@ -22,11 +22,14 @@ const search = async function () {
 
 // ФУНКЦИЯ ДЛЯ ЗАПРОСОВ НА СЕРВЕР
 const sendServerRequest = async function (userQuery, country = '') {
-  let url = `${BASE_URL}events.json?keyword=${userQuery}&countryCode=${country}&apikey=${API_KEY}`;
-  console.log(url);
-  
-  const response = await fetch(url);
+  let url;
+  if (userQuery === '') {
+    url = `${BASE_URL}events.json?apikey=${API_KEY}`;
+  } else {
+    url = `${BASE_URL}events.json?keyword=${userQuery}&countryCode=${country}&apikey=${API_KEY}`;
+  }
 
+  const response = await fetch(url);
 
   if (response.status >= 200 && response.status < 300) {
     const events = await response.json();
