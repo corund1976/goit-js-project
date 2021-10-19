@@ -1,5 +1,5 @@
 import debounce from 'lodash.debounce';
-import * as config from './config.json';
+import * as config from '../config.json';
 
 const searchFieldEl = document.querySelector('#search');
 const searchByCountryEl = document.querySelector('#country-search');
@@ -15,7 +15,7 @@ const search = async function () {
   const userQuery = searchFieldEl.value;
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
   sendServerRequest(userQuery, country);
-  const reply = await sendServerRequest(userQuery,country);
+  const reply = await sendServerRequest(userQuery, country);
   //   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
   renderMarkup(reply);
 };
@@ -62,9 +62,9 @@ const renderMarkup = function (searchedEvents) {
 };
 
 const showCountries = function () {
-    country = searchByCountryEl.value;
-    console.log(country);
-    
+  country = searchByCountryEl.value;
+  console.log(country);
+
   renderListMarkup(config);
 };
 // ФУНКЦИЯ ДЛЯ РЕНДЕРИНГА РАЗМЕТКИ ВЫПАДАЮЩЕГО СПИСКА

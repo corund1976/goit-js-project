@@ -5,12 +5,11 @@ const refs = {
 };
 
 refs.eventsCardsList.addEventListener('click', onEventClick);
-refs.eventsCardsList.addEventListener('keydown', onKeyPress);
+document.querySelector('body').addEventListener('keydown', onKeyPress);
 refs.modalBtnCloseNode.addEventListener('click', onModalClose);
 refs.modalNode.addEventListener('click', onBackdropClick);
 
 function onEventClick(e) {
-  e.preventDefault();
   refs.modalNode.classList.toggle('is-hidden');
 }
 function onModalClose(e) {
@@ -18,7 +17,6 @@ function onModalClose(e) {
 }
 function onBackdropClick(e) {
   if (e.target === refs.modalNode) {
-    console.log('Click on backdrop!');
     refs.modalNode.classList.toggle('is-hidden');
   }
 }
