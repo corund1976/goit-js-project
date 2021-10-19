@@ -48,7 +48,7 @@ const renderMarkup = function (searchedEvents) {
         </a>
     </li>`;
   }
-  document.querySelector('.card').insertAdjacentHTML('beforeend', render);
+  document.querySelector('.card').innerHTML = render;
 };
 
 const showCountries = function () {
