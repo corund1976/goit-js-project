@@ -14,13 +14,29 @@
                         <use href="./images/icons/sprite.svg#icon-search"></use>
                     </svg>
                 </span>
-                <span class="form__select">
+                <!-- <span class="form__select">
                     <select class="form-element" name="country-search" id="country-search" placeholder="Choose country">
-                    <!-- <svg class="arrow-down-icon">
-                        <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
-                    </svg> -->
                     </select>
-                </span>
+                    <svg class="arrow-down-icon">
+                        <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+                    </svg>
+                </span>  -->
+                <div class="form__button">
+                    <div class="dropdown">
+                        <button class="form-element">Search countries</button>
+                        <svg class="arrow-down-icon">
+                            <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
+                        </svg>
+                        <ul class="dropdown__list visually-hidden">
+                            <li class="dropdown__list-item" data-value="element1">Element 1</li>
+                            <li class="dropdown__list-item" data-value="element2">Element 2</li>
+                            <li class="dropdown__list-item" data-value="element3">Element 3</li>
+                            <li class="dropdown__list-item" data-value="element4">Element 4</li>
+                        </ul>
+                        <input type="text" name="select-category" value="" class="drpdown-input visually-hidden">
+                    </div>
+                </div>
+
             </form>
     </div>
 </header>

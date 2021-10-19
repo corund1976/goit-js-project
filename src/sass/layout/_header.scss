@@ -108,9 +108,15 @@ form {
     flex-direction: row;
     justify-content: center;
   }
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
 }
+
 .form__input,
-.form__select {
+.form__select,
+.form__button {
   position: relative;
 }
 .search-icon,
@@ -121,4 +127,54 @@ form {
   top: 10px;
   left: 230px;
   fill: var(--placeholder-color);
+  pointer-events: none;
+}
+.dropdown {
+  button {
+    cursor: pointer;
+    text-align: left;
+    &:focus {
+      box-shadow: 0px 2px 8px 2px rgb(197, 194, 194);
+    }
+  }
+  input {
+    position: absolute;
+  }
+}
+
+.dropdown__list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  // overflow: auto;
+  z-index: 1;
+  opacity: 1;
+  width: 100%;
+  // max-height: 0px;
+  transition: all 0.5s ease-out;
+}
+.dropdown__list.visually-hidden {
+  z-index: -1;
+  opacity: 0;
+}
+.dropdown__list-item {
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 5px 3px;
+  border: 1px solid var(--placeholder-color);
+  color: var(--placeholder-color);
+  border-bottom: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(190, 189, 189);
+    color: #000000;
+  }
+}
+.dropdown__list-item:first-child {
+  border-radius: 15px 15px 0px 0px;
+}
+.dropdown__list-item:last-child {
+  border-radius: 0px 0px 15px 15px;
 }
