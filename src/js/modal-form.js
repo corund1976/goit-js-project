@@ -1,9 +1,12 @@
 import modalMarkupTpl from '../templates/modal-markup.hbs';
 import { BASE_URL, API_KEY } from './server_request';
 
-console.log('modalMarkupTpl', modalMarkupTpl);
+// console.log('modalMarkupTpl', modalMarkupTpl);
 
 const refs = {
+  aboutAuthor: document.querySelector('.btn-more'),
+  regularTiketBtn: document.querySelector('.regular-ticket'),
+  vipTiketBtn: document.querySelector('.vip-ticket'),
   eventsCardsList: document.querySelector('.events .card'),
   modalBtnCloseNode: document.querySelector('.backdrop .modal__closed'),
   modalNode: document.querySelector('.backdrop'),
@@ -11,6 +14,8 @@ const refs = {
   cardNode: document.querySelector('.card .card__item'),
   modalContentNode: document.querySelector('.backdrop .modal-content'),
 };
+
+// console.log(refs.regularTiketBtn);
 
 refs.eventsCardsList.addEventListener('click', onEventClick);
 refs.modalBtnCloseNode.addEventListener('click', onModalClose);
@@ -32,6 +37,7 @@ async function onEventClick(e) {
 
   refs.modalContentNode.innerHTML = '';
   renderModalMarkup(data);
+  console.log(refs.regularTiketBtn);
 }
 
 function onModalClose(e) {
@@ -86,14 +92,14 @@ function renderModalMarkup(data) {
               ${data.priceRanges[0].min}-
               ${data.priceRanges[0].max} ${data.priceRanges[0].currency}</p>  
             </div>
-            <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
+            <a class="modal-button regular-ticket" target="_blank" href="#">BUY TICKETS</a>
             <div class="modal-price">
                 <svg class="modal__icon-barcode">
                   <use href="./images/svg/sprite.svg#icon-barcode"></use>
                 </svg>
                 <p class='cards__text'>VIP 1000-1500 UAH</p>
               </div>
-              <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
+              <a class="modal-button vip-ticket" target="_blank" href="#">BUY TICKETS</a>
           </div>
         </div>
         <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
