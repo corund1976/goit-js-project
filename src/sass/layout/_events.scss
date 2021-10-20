@@ -54,7 +54,7 @@
   overflow: hidden;
   white-space: nowrap;
   @media screen and (min-width: 768px) {
-    width: 150px;
+    width: 180px;
     font-size: 16px;
   }
 }
@@ -80,6 +80,7 @@
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
+    width:180px;
   }
 }
 .card__item__location {
@@ -174,6 +175,9 @@
     width: 153px;
     right: -14px;
     top: -5px;
+  }
+  @media screen and (min-width:1280px) {
+    right: 14px;
   }
 }
 
