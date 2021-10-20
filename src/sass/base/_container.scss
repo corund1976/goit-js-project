@@ -3,19 +3,19 @@
   padding-right: 25px;
   margin: 0 auto;
 
-  max-width: 480px; // 25+128+14+128+25 = 320px
+  max-width: 320px;
 
   @media screen and (min-width: 768px) {
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 86px;
+    padding-right: 87px;
 
-    max-width: 595px;
+    max-width: 768px;
   }
 
   @media screen and (min-width: 1280px) {
     padding-left: 115px;
     padding-right: 115px;
 
-    max-width: 1050px;
+    max-width: 1280px;
   }
 }
