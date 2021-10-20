@@ -28,7 +28,7 @@
 
   margin-top: 42px;
   margin-left: 14px;
-  flex-basis: calc(320px / 2 - 14px);
+  flex-basis: calc(270px / 2 - 14px);
 
   @media screen and (min-width: 768px) {
     margin-top: 58px;
@@ -45,18 +45,19 @@
 .card__item__name-of-group {
   color: var(--header-primary);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
 
-  width: 150px;
+  width: 128px;
   overflow: hidden;
   white-space: nowrap;
-  @media screen and (max-width: 768px) {
-    width: 130px;
+  @media screen and (min-width: 768px) {
+    width: 150px;
+    font-size: 16px;
   }
 }
 .marquee {
   transform: translateX(0%);
-  transition-duration: 4000ms;
+  transition-duration: 5000ms;
   transition-timing-function: linear;
   &:hover {
     transform: translateX(calc(-100% + 145px));
@@ -66,15 +67,17 @@
   display: flex;
   justify-content: start;
 }
-.card__item__name-of-group {
-  color: var(--header-primary);
-  font-weight: 700;
-  font-size: 16px;
-}
 .card__item__date-to-begin {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--header-secondary);
+  display: flex;
+  justify-content: center;
+  width: 130px;
+
+  @media screen and (min-width:768px) {
+    font-size: 16px;
+  }
 }
 .card__item__location {
   font-size: 14px;
@@ -83,11 +86,11 @@
 
   overflow: hidden;
   white-space: nowrap;
-  width: 150px;
+  width: 130px;
 }
 .marquee-location {
   transform: translateX(0%);
-  transition-duration: 4000ms;
+  transition-duration: 5000ms;
   transition-timing-function: linear;
   &:hover {
     transform: translateX(calc(-100% + 145px));
