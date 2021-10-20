@@ -1,5 +1,43 @@
-.header {
+.header__section {
+  padding-top: 78px;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 81px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 40px;
+    padding-bottom: 90px;
+  }
 }
+
+// ======== З А Г О Л О В О К ========
+.header__title {
+  width: 220px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--header-primary);
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    width: 360px;
+    margin-bottom: 27px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 50px;
+    width: 600px;
+    margin-bottom: 52px;
+  }
+}
+
+// ======== Л О Г О Т И П =========
 .header__logo {
   .background-logo {
     width: 210px;
@@ -49,38 +87,7 @@
   }
 }
 
-.header__section {
-  padding-top: 78px;
-  padding-bottom: 10px;
-  @media screen and (min-width: 768px) {
-    padding-top: 40px;
-    padding-bottom: 81px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding-top: 40px;
-    padding-bottom: 90px;
-  }
-}
-.header__title {
-  width: 220px;
-  margin: 0 auto;
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 1.2;
-  color: var(--header-primary);
-  @media screen and (min-width: 768px) {
-    font-size: 30px;
-    width: 360px;
-    margin-bottom: 27px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 50px;
-    width: 600px;
-    margin-bottom: 52px;
-  }
-}
+// ======== П О И С К =========
 form {
   display: flex;
   flex-direction: column;
