@@ -26,6 +26,8 @@
 .card__item {
   position: relative;
 
+  cursor: pointer;
+
   margin-top: 42px;
   margin-left: 14px;
   // flex-basis: calc((100% - 28px) / 2);
@@ -81,7 +83,7 @@
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
-    width:180px;
+    width: 180px;
   }
 }
 .card__item__location {
@@ -179,7 +181,7 @@
     right: -14px;
     top: -5px;
   }
-  @media screen and (min-width:1280px) {
+  @media screen and (min-width: 1280px) {
     right: 14px;
   }
 }
