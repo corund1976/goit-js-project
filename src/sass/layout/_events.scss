@@ -103,14 +103,14 @@
     transform: translateX(calc(-100% + 145px));
   }
 }
-.card__img-location {
-  background-image: url('/images/card/location.png');
-  width: 7px;
-  height: 10px;
-  object-fit: contain;
-  display: inline-block;
-  background-repeat: no-repeat;
-}
+// .card__img-location {
+//   background-image: url('/images/card/location.png');
+//   width: 7px;
+//   height: 10px;
+//   object-fit: contain;
+//   display: inline-block;
+//   background-repeat: no-repeat;
+// }
 .card__item__location {
   font-size: 14px;
   font-weight: 600;
@@ -187,4 +187,9 @@
   100% {
     transform: scale(1);
   }
+}
+.icon__location {
+  width: 10px;
+  height: 10px;
+  fill: #ffffff;
 }

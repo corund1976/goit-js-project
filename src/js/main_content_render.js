@@ -1,7 +1,8 @@
+import spriteSvg from '../images/svg/sprite.svg';
 export const renderMarkup = function (searchedEvents) {
   let render = '';
   let totalEl;
-  
+
   if (searchedEvents.page.totalElements > searchedEvents.page.size) {
     totalEl = searchedEvents.page.size;
   } else {
@@ -22,14 +23,16 @@ export const renderMarkup = function (searchedEvents) {
             }</p>
             <p class="card__item__location card__item__elements">
             <span class="marquee-location">
-            <span class="card__img-location"></span> 
-            ${searchedEvents._embedded.events[
-              i
-            ]._embedded.venues.map(item => (item.name ? item.name : item.address?.line1))}</span></p>
+            <svg class="icon__location">
+              <use href="${spriteSvg}#icon-location"></use>
+            </svg>
+            ${searchedEvents._embedded.events[i]._embedded.venues.map(item =>
+              item.name ? item.name : item.address?.line1,
+            )}</span></p>
     </li>`;
   }
 
   document.querySelector('.card').innerHTML = render;
 };
 
-            // <img class="card__item__location-img" src="../images/card/location.png" alt="location"> ${searchedEvents._embedded.events[
+// <img class="card__item__location-img" src="../images/card/location.png" alt="location"> ${searchedEvents._embedded.events[
