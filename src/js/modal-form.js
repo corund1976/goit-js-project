@@ -27,7 +27,7 @@ async function onEventClick(e) {
   e.preventDefault();
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
-
+  console.log(e.target);
   console.log('onEventClick ~ e', e);
 }
 
