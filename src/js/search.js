@@ -30,6 +30,10 @@ searchByCountryEl.addEventListener('change', e => {
   search();
 });
 
+searchByCountryEl.addEventListener('click', e => {
+  searchByCountryEl.value = '';
+});
+
 document.querySelector('form').addEventListener('submit', e => {
   e.preventDefault();
 });
