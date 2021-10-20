@@ -10,34 +10,34 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  margin-top: -42px;
   margin-left: -14px;
-  margin-top: -14px;
 
   @media screen and (min-width: 768px) {
-    margin-top: -27px;
+    margin-top: -58px;
     margin-left: -27px;
   }
 
   @media screen and (min-width: 1280px) {
-    margin-top: -70px;
+    margin-top: -63px;
     margin-left: -70px;
   }
 }
 .card__item {
   position: relative;
 
-  margin-top: 14px;
+  margin-top: 42px;
   margin-left: 14px;
   flex-basis: calc(320px / 2 - 14px);
 
   @media screen and (min-width: 768px) {
-    margin-top: 27px;
+    margin-top: 58px;
     margin-left: 27px;
     flex-basis: calc(100% / 3 - 27px);
   }
 
   @media screen and (min-width: 1280px) {
-    margin-top: 70px;
+    margin-top: 63px;
     margin-left: 70px;
     flex-basis: calc(100% / 4 - 70px);
   }
@@ -65,7 +65,10 @@
 .card__item__elements {
   display: flex;
   justify-content: start;
+<<<<<<< HEAD
   // pointer-events: none;
+=======
+>>>>>>> dev
 }
 .card__item__name-of-group {
   color: var(--header-primary);

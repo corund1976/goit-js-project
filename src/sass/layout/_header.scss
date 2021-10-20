@@ -1,6 +1,43 @@
-.header {
-  background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(11, 11, 11, 0.5));
+.header__section {
+  padding-top: 78px;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    padding-bottom: 81px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 40px;
+    padding-bottom: 90px;
+  }
 }
+
+// ======== З А Г О Л О В О К ========
+.header__title {
+  width: 220px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--header-primary);
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    width: 360px;
+    margin-bottom: 27px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: 50px;
+    width: 600px;
+    margin-bottom: 52px;
+  }
+}
+
+// ======== Л О Г О Т И П =========
 .header__logo {
   .background-logo {
     width: 210px;
@@ -50,36 +87,7 @@
   }
 }
 
-.header__section {
-  padding-top: 80px;
-  padding-bottom: 10px;
-  @media screen and (min-width: 768px) {
-    padding-bottom: 80px;
-  }
-  @media screen and (min-width: 1280px) {
-    padding-bottom: 90px;
-  }
-}
-.header__title {
-  width: 220px;
-  margin: 0 auto;
-  margin-bottom: 25px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 1.2;
-  color: var(--header-primary);
-  @media screen and (min-width: 768px) {
-    font-size: 30px;
-    width: 370px;
-    margin-bottom: 30px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 50px;
-    width: 600px;
-    margin-bottom: 40px;
-  }
-}
+// ======== П О И С К =========
 form {
   display: flex;
   flex-direction: column;
@@ -98,10 +106,10 @@ form {
     }
   }
   .form__input {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     @media screen and (min-width: 768px) {
       margin-bottom: 0;
-      margin-right: 20px;
+      margin-right: 30px;
     }
   }
   @media screen and (min-width: 768px) {
