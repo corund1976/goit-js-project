@@ -15,15 +15,17 @@ export const renderMarkup = function (searchedEvents) {
             <img src="${searchedEvents._embedded.events[i].images.map(img => img.url)[0]}" 
                 alt="img with singer"
                 class="card__item__img card__item__elements">
-            <h3 class="card__item__name-of-group card__item__elements"> ${
+            <h2 class="card__item__name-of-group card__item__elements"><span class="marquee"> ${
               searchedEvents._embedded.events[i].name
-            }</h3>
+            }</span></h2>
             <p class="card__item__date-to-begin card__item__elements">${
               searchedEvents._embedded.events[i].dates.start.localDate
             }</p>
-            <p class="card__item__location card__item__elements"> ${searchedEvents._embedded.events[
+            <p class="card__item__location card__item__elements">
+            <span class="marquee-location">
+            <img class="card__item__location-img" src="/src/images/card/location.png" alt="location"> ${searchedEvents._embedded.events[
               i
-            ]._embedded.venues.map(item => (item.name ? item.name : item.address?.line1))}</p>
+            ]._embedded.venues.map(item => (item.name ? item.name : item.address?.line1))}</span></p>
         </a>
     </li>`;
   }
