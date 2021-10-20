@@ -1,9 +1,5 @@
-import modalMarkupTpl from '../templates/modal-markup.hbs';
-// import { search, result } from './search-field';
-// console.log('modalMarkupTpl', modalMarkupTpl);
-
 const refs = {
-  eventsCardsList: document.querySelector('.events-section .card'),
+  eventsCardsList: document.querySelector('.events .card'),
   modalBtnCloseNode: document.querySelector('.backdrop .modal__closed'),
   modalNode: document.querySelector('.backdrop'),
   bodyNode: document.querySelector('body'),
@@ -11,7 +7,6 @@ const refs = {
 };
 
 refs.eventsCardsList.addEventListener('click', onEventClick);
-
 refs.modalBtnCloseNode.addEventListener('click', onModalClose);
 refs.modalNode.addEventListener('click', onBackdropClick);
 
@@ -24,11 +19,11 @@ async function onEventClick(e) {
     e.target.nodeName !== 'P'
   )
     return false;
+  
   e.preventDefault();
+  
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
-
-  console.log('onEventClick ~ e', e);
 }
 
 function onModalClose(e) {

@@ -31,3 +31,5 @@ export const renderMarkup = function (searchedEvents) {
 
   document.querySelector('.card').innerHTML = render;
 };
+
+            // <img class="card__item__location-img" src="../images/card/location.png" alt="location"> ${searchedEvents._embedded.events[
