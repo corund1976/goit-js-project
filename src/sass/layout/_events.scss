@@ -28,17 +28,20 @@
 
   margin-top: 42px;
   margin-left: 14px;
+  // flex-basis: calc((100% - 28px) / 2);
   flex-basis: calc(270px / 2 - 14px);
 
   @media screen and (min-width: 768px) {
     margin-top: 58px;
     margin-left: 27px;
+    // flex-basis: calc((100% - 81px) / 3);
     flex-basis: calc(100% / 3 - 27px);
   }
 
   @media screen and (min-width: 1280px) {
     margin-top: 63px;
     margin-left: 70px;
+    // flex-basis: calc((100% - 280px) / 4);
     flex-basis: calc(100% / 4 - 70px);
   }
 }
@@ -73,7 +76,7 @@
   color: var(--header-secondary);
   display: flex;
   justify-content: center;
-  width: 126px;
+  width: 128px;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -86,7 +89,11 @@
 
   overflow: hidden;
   white-space: nowrap;
-  width: 130px;
+  width: 128px;
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+  }
 }
 .marquee-location {
   transform: translateX(0%);
@@ -96,14 +103,13 @@
     transform: translateX(calc(-100% + 145px));
   }
 }
-.card__img-location{
+.card__img-location {
   background-image: url('/images/card/location.png');
   width: 7px;
   height: 10px;
   object-fit: contain;
   display: inline-block;
   background-repeat: no-repeat;
-
 }
 .card__item__location {
   font-size: 14px;
@@ -111,6 +117,7 @@
   color: var(--header-secondary);
   position: relative;
 }
+
 .card__item__img {
   height: 161px;
   width: 128px;
@@ -119,7 +126,7 @@
   object-fit: cover;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  
+
   animation-name: scale-img;
   animation-duration: 1000ms;
   animation-timing-function: linear;
@@ -131,18 +138,19 @@
     width: 180px;
   }
 }
+
 @keyframes scale-img {
   0% {
     transform: scale(0.8);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
   }
 }
+
 .border-card {
   border: 1px solid rgba(220, 86, 197, 0.3);
   width: 101px;
@@ -159,20 +167,21 @@
   animation-timing-function: linear;
   animation-iteration-count: 1;
   transition-delay: 500ms;
+
   @media screen and (min-width: 768px) {
     height: 143px;
     width: 153px;
     left: 12px;
   }
 }
+
 @keyframes scale-border {
   0% {
     transform: scale(1.2);
   }
-  50%{
+  50% {
     transform: scale(0.8);
   }
-
   100% {
     transform: scale(1);
   }
