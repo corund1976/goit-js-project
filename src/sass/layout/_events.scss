@@ -69,6 +69,7 @@
 .card__item__elements {
   display: flex;
   justify-content: start;
+  pointer-events: none;
 }
 .card__item__date-to-begin {
   font-size: 14px;
@@ -104,6 +105,7 @@
     transform: translateX(calc(-100% + 145px));
   }
 }
+
 // .card__img-location {
 //   background-image: url('/images/card/location.png');
 //   width: 7px;
@@ -112,6 +114,7 @@
 //   display: inline-block;
 //   background-repeat: no-repeat;
 // }
+
 .card__item__location {
   font-size: 14px;
   font-weight: 600;

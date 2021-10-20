@@ -10,8 +10,8 @@ export const renderMarkup = function (searchedEvents) {
   }
 
   for (let i = 0; i < totalEl; i++) {
-    render += ` <li class="card__item">
-            <div class="border-card"></div>
+    render += ` <li class="card__item" id="${searchedEvents._embedded.events[i].id}">
+            <div class="border-card card__item__elements"></div>
             <img src="${searchedEvents._embedded.events[i].images.map(img => img.url)[0]}" 
                 alt="img with singer"
                 class="card__item__img card__item__elements">
@@ -26,6 +26,7 @@ export const renderMarkup = function (searchedEvents) {
             <svg class="icon__location">
               <use href="${spriteSvg}#icon-location"></use>
             </svg>
+
             ${searchedEvents._embedded.events[i]._embedded.venues.map(item =>
               item.name ? item.name : item.address?.line1,
             )}</span></p>
