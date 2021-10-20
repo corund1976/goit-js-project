@@ -21,8 +21,11 @@ export const renderMarkup = function (searchedEvents) {
               searchedEvents._embedded.events[i].dates.start.localDate
             }</p>
             <p class="card__item__location card__item__elements">
-            <span class="marquee-location">&#128205;${searchedEvents._embedded.events[i]._embedded.venues
-              .map(item => (item.name ? item.name : item.address?.line1))}</span></p>
+            <span class="marquee-location">
+            <span class="card__img-location"></span> 
+            ${searchedEvents._embedded.events[
+              i
+            ]._embedded.venues.map(item => (item.name ? item.name : item.address?.line1))}</span></p>
     </li>`;
   }
 
