@@ -57,7 +57,7 @@
 }
 .marquee {
   transform: translateX(0%);
-  transition-duration: 5001ms;
+  transition-duration: 5000ms;
   transition-timing-function: linear;
   &:hover {
     transform: translateX(calc(-100% + 110px));
