@@ -1,5 +1,5 @@
 import modalMarkupTpl from '../templates/modal-markup.hbs';
-import { search, result } from './search-field';
+// import { search, result } from './search-field';
 // console.log('modalMarkupTpl', modalMarkupTpl);
 
 const refs = {
