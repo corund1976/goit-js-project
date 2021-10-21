@@ -17,8 +17,15 @@ export const search = async function () {
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
   try {
     const reply = await sendServerRequest(userQuery, country);
-    renderMarkup(reply);
     renderPagination(reply);
+    renderMarkup(reply);
+    if (reply.page.totalElements === 0) {
+      document.querySelector('#tui-pagination-container').classList.add('visually-hidden');
+      Notify.warning('No result found');
+    } else {
+      Notify.success(`Yahoo ${reply.page.totalElements} found`);
+      document.querySelector('#tui-pagination-container').classList.remove('visually-hidden');
+    }
   } catch (error) {
     console.log(error);
     Notify.failure('Bad request');

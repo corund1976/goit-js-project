@@ -16,6 +16,7 @@ export const renderPagination = async function (responce) {
   if (totalPages > 50) {
     totalItems = 980;
   }
+  myPagination.reset(totalItems);
   myPagination.setItemsPerPage(pageSize);
   myPagination.setTotalItems(totalItems);
   myPagination.reset(totalItems);
