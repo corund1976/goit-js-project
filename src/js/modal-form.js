@@ -1,8 +1,6 @@
 import modalMarkupTpl from '../templates/modal-markup.hbs';
 import { BASE_URL, API_KEY } from './server_request';
 
-console.log('modalMarkupTpl', modalMarkupTpl);
-
 const refs = {
   eventsCardsList: document.querySelector('.events .card'),
   modalBtnCloseNode: document.querySelector('.backdrop .modal__closed'),
