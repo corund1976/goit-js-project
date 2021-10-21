@@ -4,7 +4,6 @@ export const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
 
 export const sendServerRequest = async function (userQuery = '', country = '', page = 0) {
   let url;
-
   if (userQuery === '' && country !== '') {
     url = `${BASE_URL}events.json?countryCode=${country}&apikey=${API_KEY}&page=${page}`;
   } else if (country === '') {

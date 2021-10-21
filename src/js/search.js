@@ -16,22 +16,25 @@ export const search = async function () {
   // БЕРЁМ ДАННЫЕ ПОЛЬЗОВАТЕЛЯ
   userQuery = searchFieldEl.value || '';
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
-  // sendServerRequest(userQuery, country);
   try {
     const reply = await sendServerRequest(userQuery, country);
-    renderMarkup(reply);
     renderPagination(reply);
+    renderMarkup(reply);
+    if (reply.page.totalElements === 0) {
+      document.querySelector('#tui-pagination-container').classList.add('visually-hidden');
+      Notify.warning('No result found');
+    } else {
+      Notify.success(`Yahoo ${reply.page.totalElements} found`);
+      document.querySelector('#tui-pagination-container').classList.remove('visually-hidden');
+    }
   } catch (error) {
     console.log(error);
     Notify.failure('Bad request');
   }
   //   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
-
-  // return reply;
 };
 
 searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
-// searchByCountryEl.addEventListener('click', debounce(showCountries, DEBOUNCE_DELAY));
 renderListMarkup(config);
 
 searchByCountryEl.addEventListener('change', e => {
@@ -48,5 +51,3 @@ document.querySelector('form').addEventListener('submit', e => {
 });
 
 search();
-
-
