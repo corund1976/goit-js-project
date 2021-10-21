@@ -1,7 +1,5 @@
-import modalMarkupTpl from '../templates/modal-markup.hbs';
+// import modalMarkupTpl from '../templates/modal-markup.hbs';
 import { BASE_URL, API_KEY } from './server_request';
-
-console.log('modalMarkupTpl', modalMarkupTpl);
 
 const refs = {
   eventsCardsList: document.querySelector('.events .card'),
@@ -17,21 +15,21 @@ refs.modalBtnCloseNode.addEventListener('click', onModalClose);
 refs.modalNode.addEventListener('click', onBackdropClick);
 
 async function onEventClick(e) {
-  // if (e.target.nodeName !== 'LI') return false;
   if (e.target.nodeName !== 'LI') return false;
   e.preventDefault();
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 
-  console.log('onEventClick ~ e', e.target.id);
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
-  console.log('onEventClick ~ response', response);
-  const data = await response.json();
-  console.log('onEventClick ~ data', data);
 
-  refs.modalContentNode.innerHTML = '';
-  renderModalMarkup(data);
+  if (response.status >= 200 && response.status < 300) {
+    const data = await response.json();
+    console.log('onEventClick ~ data', data);
+
+    refs.modalContentNode.innerHTML = '';
+    renderModalMarkup(data);
+  } else return Promise.reject(console.log('Request error!!!'));
 }
 
 function onModalClose(e) {
@@ -59,7 +57,7 @@ function renderModalMarkup(data) {
           </div>
           <div class='cards__info'>
             <span class='cards__title'>INFO</span>
-            <p class='cards__text'>${data._embedded.venues[0].generalInfo.generalRule}
+            <p class='cards__text__info'>${data._embedded.venues[0].generalInfo?.generalRule}
             </p>
             <span class='cards__title'>WHEN</span>
             <p class='cards__text'>${data.dates.start.localDate}
@@ -69,7 +67,7 @@ function renderModalMarkup(data) {
             <span class='cards__title'>WHERE</span>
             <p class='cards__text'>${data._embedded.venues[0].city.name},
              ${data._embedded.venues[0].country.name},
-             ${data._embedded.venues[0].state.name},
+             ${data._embedded.venues[0].state?.name},
               <br />
               ${data._embedded.venues[0].name}
             </p>
@@ -82,9 +80,9 @@ function renderModalMarkup(data) {
               <svg class="modal__icon-barcode">
                 <use href="./images/svg/sprite.svg#icon-barcode"></use>
               </svg>
-              <p class='cards__text'>${data.priceRanges[0].type} 
-              ${data.priceRanges[0].min}-
-              ${data.priceRanges[0].max} ${data.priceRanges[0].currency}</p>  
+              <p class='cards__text'>${data.priceRanges?.[0].type} 
+              ${data.priceRanges?.[0].min}-
+              ${data.priceRanges?.[0].max} ${data.priceRanges?.[0].currency}</p>  
             </div>
             <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
             <div class="modal-price">
@@ -95,8 +93,8 @@ function renderModalMarkup(data) {
               </div>
               <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
           </div>
-        </div>
-        <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
+          </div>
+          <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
         
       </div>
   `;
