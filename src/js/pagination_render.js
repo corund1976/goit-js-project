@@ -32,7 +32,6 @@ export const renderPagination = async function (responce) {
   //   };
 };
 const onLoadPage = async function (page) {
-  console.log(page);
   //   const res = await search();
   //   console.log(res);
   const reply = await sendServerRequest(userQuery, country, page);

@@ -4,6 +4,7 @@ import { renderMarkup } from './main_content_render';
 import { sendServerRequest } from './server_request';
 import { renderListMarkup } from './country_list_render';
 import { renderPagination } from './pagination_render';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const searchFieldEl = document.querySelector('#search');
 const searchByCountryEl = document.querySelector('#country-search-input');
 const DEBOUNCE_DELAY = 300;
@@ -16,10 +17,16 @@ export const search = async function () {
   userQuery = searchFieldEl.value || '';
   // ОТПРАВЛЯЕМ ЗАПРОС НА СЕРВЕР (ДАННЫЕ ПОЛЬЗОВАТЕЛЯ В ПАРАМЕТРЕ)
   // sendServerRequest(userQuery, country);
-  const reply = await sendServerRequest(userQuery, country);
+  try {
+    const reply = await sendServerRequest(userQuery, country);
+    renderMarkup(reply);
+    renderPagination(reply);
+  } catch (error) {
+    console.log(error);
+    Notify.failure('Bad request');
+  }
   //   ВЫЗЫВАЕМ ФУНКЦИЮ ОТРИСОВКИ РАЗМЕТКИ
-  renderMarkup(reply);
-  renderPagination(reply);
+
   // return reply;
 };
 
