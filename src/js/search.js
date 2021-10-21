@@ -10,6 +10,10 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const searchFieldEl = document.querySelector('#search');
 const searchByCountryEl = document.querySelector('#country-search-input');
 
+const containerEl = document.querySelector(".card")
+const clearFilterBtn = document.querySelector('.header__logo');
+const DEBOUNCE_DELAY = 300;
+
 export let country;
 export let userQuery;
 export const search = async function () {
@@ -45,8 +49,14 @@ searchByCountryEl.addEventListener('click', e => {
   searchByCountryEl.value = '';
 });
 
-document.querySelector('form').addEventListener('submit', e => {
-  e.preventDefault();
-});
-
 search();
+
+async function clearFilter() {
+  const serverResponse = await sendServerRequest()
+  searchFieldEl.value = "";
+  searchByCountryEl.value = "";
+  containerEl.innerHTML = '';
+  renderMarkup(serverResponse)
+  renderPagination(serverResponse)
+}
+clearFilterBtn.addEventListener('click', clearFilter)
