@@ -91,7 +91,7 @@ function renderModalMarkup(data) {
               ${data._embedded.venues[0].name}
             </p>
             <span class='cards__title'>WHO</span>
-            <p class='cards__text'>${data._embedded.attractions.map(
+            <p class='cards__text'>${data._embedded.attractions?.map(
               participant => participant.name,
             )}
               </p>
