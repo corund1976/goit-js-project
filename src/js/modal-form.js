@@ -56,7 +56,7 @@ async function onEventClick(e) {
       let {
         _embedded: { attractions },
       } = data;
-      let artists = attractions.map(item => item.name).join(',');
+      let artists = attractions?.map(item => item.name).join(',');
       const serverResponse = await sendServerRequest(artists);
 
       onModalClose();
