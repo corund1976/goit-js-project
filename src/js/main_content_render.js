@@ -14,7 +14,10 @@ export const renderMarkup = function (searchedEvents) {
             <img src="${searchedEvents._embedded?.events?.[i].images.map(img => img.url)[0]}" 
                 alt="img with singer"
                 class="card__item__img card__item__elements">
-            <h2 class="card__item__name-of-group card__item__elements card__item__animation"><span class="marquee"> ${
+<
+            <h2 class="card__item__name-of-group card__item__elements card__item__animation  ${
+              searchedEvents._embedded?.events?.[i].name.length > 20 ? 'j-content': ""}"><span class="marquee"> 
+            ${
               searchedEvents._embedded?.events?.[i].name
             }</span></h2>
             <p class="card__item__date-to-begin card__item__elements">${
