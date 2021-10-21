@@ -52,12 +52,308 @@
   @media screen and (min-width: 768px) {
     height: 2582px;
 
-    background-image: url(../images/bg/bg_body_tablet.jpg);
+    background-image: url(../images/bg/noise_body_tablet.png);
   }
 
   @media screen and (min-width: 1280px) {
     height: 1930px;
 
-    background-image: url(../images/bg/bg_body_desktop.jpg);
+    background-image: url(../images/bg/noise_body_desktop.png);
   }
 }
+
+// =========== Э Л Л И П С Ы ============
+.bg_ellipse5down {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0px;
+    left: 23px;
+
+    width: 126px;
+    height: 63px;
+
+    background-image: url(../images/bg/ellipse5down.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: 7px;
+
+    width: 216px;
+    height: 108px;
+  }
+}
+
+.bg_ellipse2down {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0px;
+    left: 46px;
+
+    width: 80px;
+    height: 40px;
+
+    background-image: url(../images/bg/ellipse2down.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    left: 47px;
+
+    width: 136px;
+    height: 68px;
+  }
+}
+
+.bg_ellipse7down {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 197px;
+    right: 26px;
+
+    width: 237px;
+    height: 237px;
+
+    background-image: url(../images/bg/ellipse7down.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 158px;
+    right: 30px;
+
+    width: 334px;
+    height: 334px;
+  }
+}
+
+.bg_ellipse7top {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 1924px;
+    right: 26px;
+
+    width: 237px;
+    height: 237px;
+
+    background-image: url(../images/bg/ellipse7top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 1552px;
+    right: 30px;
+
+    width: 334px;
+    height: 334px;
+  }
+}
+
+.bg_ellipse6 {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 1123px;
+    left: 26px;
+
+    width: 237px;
+    height: 237px;
+
+    background-image: url(../images/bg/ellipse6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 788px;
+    left: 30px;
+
+    width: 334px;
+    height: 334px;
+  }
+}
+
+.bg_ellipse8 {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 1295px;
+    right: 24px;
+
+    width: 126px;
+    height: 126px;
+
+    background-image: url(../images/bg/ellipse8.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 893px;
+    right: 7px;
+
+    width: 216px;
+    height: 216px;
+  }
+}
+
+.bg_ellipse9 {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 1318px;
+    right: 47px;
+
+    width: 80px;
+    height: 80px;
+
+    background-image: url(../images/bg/ellipse9.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 933px;
+    right: 47px;
+
+    width: 136px;
+    height: 136px;
+  }
+}
+
+.bg_ellipse5top {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 2351px;
+    left: 23px;
+
+    width: 126px;
+    height: 126px;
+
+    background-image: url(../images/bg/ellipse5top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 1418px;
+    left: 7px;
+
+    width: 216px;
+    height: 216px;
+  }
+}
+
+.bg_ellipse2top {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 2374px;
+    left: 46px;
+
+    width: 80px;
+    height: 80px;
+
+    background-image: url(../images/bg/ellipse2top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 1458px;
+    left: 47px;
+
+    width: 136px;
+    height: 136px;
+  }
+}
+
+// =========== Л И Н И И ============
+.bg_line_top_left {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 2478px;
+    left: 86px;
+
+    width: 1px;
+    height: 469px;
+
+    background-image: url(../images/bg/line_top_left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 1634px;
+    left: 115px;
+
+    width: 1px;
+    height: 742px;
+  }
+}
+// .bg_line_top_right {
+//   @media screen and (min-width: 768px) {
+//     position: absolute;
+//     bottom: 2374px;
+//     left: 46px;
+
+//     width: 80px;
+//     height: 80px;
+
+//     background-image: url(../images/bg/ellipse2top.png);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     bottom: 1458px;
+//     left: 47px;
+
+//     width: 136px;
+//     height: 136px;
+//   }
+// }
+// .bg_line_down_left {
+//   @media screen and (min-width: 768px) {
+//     position: absolute;
+//     bottom: 2374px;
+//     left: 46px;
+
+//     width: 80px;
+//     height: 80px;
+
+//     background-image: url(../images/bg/ellipse2top.png);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     bottom: 1458px;
+//     left: 47px;
+
+//     width: 136px;
+//     height: 136px;
+//   }
+// }
+// .bg_line_down_right {
+//   @media screen and (min-width: 768px) {
+//     position: absolute;
+//     bottom: 2374px;
+//     left: 46px;
+
+//     width: 80px;
+//     height: 80px;
+
+//     background-image: url(../images/bg/ellipse2top.png);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     bottom: 1458px;
+//     left: 47px;
+
+//     width: 136px;
+//     height: 136px;
+//   }
+// }
