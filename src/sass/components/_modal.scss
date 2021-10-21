@@ -1,5 +1,6 @@
 .modal {
   position: fixed;
+  overflow: scroll;
   z-index: 100;
   top: 80%;
   left: 50%;
@@ -35,6 +36,7 @@
       cursor: pointer;
     }
   }
+
   @media screen and (min-width: 768px) {
     padding: 0px 30px;
     left: 50%;
@@ -138,6 +140,8 @@
   margin-right: auto;
   object-fit: cover;
   color: var(--background-primary);
+  // max-width: 100%;
+
   @media screen and(min-width: 768px) {
     display: block;
     max-width: 233px;

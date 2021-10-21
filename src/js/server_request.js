@@ -1,6 +1,6 @@
 // ФУНКЦИЯ ДЛЯ ЗАПРОСОВ НА СЕРВЕР
-const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
-const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
+export const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
+export const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
 
 export const sendServerRequest = async function (userQuery = '', country = '', page = 0) {
   let url;

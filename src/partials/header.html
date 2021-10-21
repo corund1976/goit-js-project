@@ -1,4 +1,4 @@
-<header class="header__section">
+<header class="header">
     <div class="container ">
             <div class="header__logo">
                 <svg class="header__logo-icon">
@@ -7,20 +7,23 @@
                 <div class="background-logo"></div>
             </div>
             <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
-            <form>
+            <form autocomplete="off">
                 <span class="form__input">
                     <input class="form-element" name="search-field" id="search" type="text" placeholder="Start searching" />
                     <svg class="search-icon">
-                        <use href="./images/icons/sprite.svg#icon-search"></use>
+                        <use href="./images/svg/sprite.svg#icon-search"></use>
                     </svg>
                 </span>
                 <span class="form__select">
-                    <select class="form-element" name="country-search" id="country-search" placeholder="Choose country">
-                    <!-- <svg class="arrow-down-icon">
-                        <use href="./images/icons/sprite.svg#icon-arrow-down"></use>
-                    </svg> -->
-                    </select>
+                    <input list="country-search" name="browser" class="form-element" id="country-search-input" placeholder="Search countries . . .">
+                    <datalist id="country-search">
+                    </datalist>
+                    <!-- <select class="form-element" name="country-search" id="country-search" placeholder="Choose country">
+                     <svg class="arrow-down-icon">
+                        <use href="./images/svg/sprite.svg#icon-arrow-down"></use>
+                    </svg> 
+                    </select>-->
                 </span>
             </form>
-    </div>
+    </div> 
 </header>
