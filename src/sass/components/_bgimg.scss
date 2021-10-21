@@ -68,6 +68,7 @@
     position: absolute;
     bottom: 0px;
     left: 23px;
+    z-index: -1;
 
     width: 126px;
     height: 63px;
@@ -90,6 +91,7 @@
     position: absolute;
     bottom: 0px;
     left: 46px;
+    z-index: -1;
 
     width: 80px;
     height: 40px;
@@ -112,6 +114,7 @@
     position: absolute;
     bottom: 197px;
     right: 26px;
+    z-index: -1;
 
     width: 237px;
     height: 237px;
@@ -135,6 +138,7 @@
     position: absolute;
     bottom: 1924px;
     right: 26px;
+    z-index: -1;
 
     width: 237px;
     height: 237px;
@@ -158,6 +162,7 @@
     position: absolute;
     bottom: 1123px;
     left: 26px;
+    z-index: -1;
 
     width: 237px;
     height: 237px;
@@ -181,6 +186,7 @@
     position: absolute;
     bottom: 1295px;
     right: 24px;
+    z-index: -1;
 
     width: 126px;
     height: 126px;
@@ -204,6 +210,7 @@
     position: absolute;
     bottom: 1318px;
     right: 47px;
+    z-index: -1;
 
     width: 80px;
     height: 80px;
@@ -227,6 +234,7 @@
     position: absolute;
     bottom: 2351px;
     left: 23px;
+    z-index: -1;
 
     width: 126px;
     height: 126px;
@@ -250,6 +258,7 @@
     position: absolute;
     bottom: 2374px;
     left: 46px;
+    z-index: -1;
 
     width: 80px;
     height: 80px;
@@ -291,69 +300,72 @@
     height: 742px;
   }
 }
-// .bg_line_top_right {
-//   @media screen and (min-width: 768px) {
-//     position: absolute;
-//     bottom: 2374px;
-//     left: 46px;
 
-//     width: 80px;
-//     height: 80px;
+.bg_line_top_right {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 1421px;
+    right: 87px;
 
-//     background-image: url(../images/bg/ellipse2top.png);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
+    width: 1px;
+    height: 1525px;
 
-//   @media screen and (min-width: 1280px) {
-//     bottom: 1458px;
-//     left: 47px;
+    background-image: url(../images/bg/line_top_right.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-//     width: 136px;
-//     height: 136px;
-//   }
-// }
-// .bg_line_down_left {
-//   @media screen and (min-width: 768px) {
-//     position: absolute;
-//     bottom: 2374px;
-//     left: 46px;
+  @media screen and (min-width: 1280px) {
+    bottom: 1109px;
+    right: 115px;
 
-//     width: 80px;
-//     height: 80px;
+    width: 1px;
+    height: 1267px;
+  }
+}
 
-//     background-image: url(../images/bg/ellipse2top.png);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
+.bg_line_down_left {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 63px;
+    left: 86px;
 
-//   @media screen and (min-width: 1280px) {
-//     bottom: 1458px;
-//     left: 47px;
+    width: 1px;
+    height: 2288px;
 
-//     width: 136px;
-//     height: 136px;
-//   }
-// }
-// .bg_line_down_right {
-//   @media screen and (min-width: 768px) {
-//     position: absolute;
-//     bottom: 2374px;
-//     left: 46px;
+    background-image: url(../images/bg/line_down_left.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-//     width: 80px;
-//     height: 80px;
+  @media screen and (min-width: 1280px) {
+    bottom: 108px;
+    left: 115px;
 
-//     background-image: url(../images/bg/ellipse2top.png);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }
+    width: 1px;
+    height: 1310px;
+  }
+}
 
-//   @media screen and (min-width: 1280px) {
-//     bottom: 1458px;
-//     left: 47px;
+.bg_line_down_right {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0px;
+    right: 87px;
 
-//     width: 136px;
-//     height: 136px;
-//   }
-// }
+    width: 1px;
+    height: 1295px;
+
+    background-image: url(../images/bg/line_down_right.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    bottom: 0px;
+    right: 115px;
+
+    width: 1px;
+    height: 893px;
+  }
+}

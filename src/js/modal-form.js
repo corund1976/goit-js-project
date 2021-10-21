@@ -1,4 +1,5 @@
 // import modalMarkupTpl from '../templates/modal-markup.hbs';
+import spriteSvg from '../images/svg/sprite.svg';
 import { BASE_URL, API_KEY } from './server_request';
 
 const refs = {
@@ -8,6 +9,7 @@ const refs = {
   bodyNode: document.querySelector('body'),
   cardNode: document.querySelector('.card .card__item'),
   modalContentNode: document.querySelector('.backdrop .modal-content'),
+  modalAnimation: document.querySelector('.modal'),
 };
 
 refs.eventsCardsList.addEventListener('click', onEventClick);
@@ -20,6 +22,10 @@ async function onEventClick(e) {
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
+  refs.bodyNode.classList.toggle('modal-is-open');
+  refs.modalAnimation.classList.add('animation-open');
+  refs.modalAnimation.classList.remove('animation-close');
+  console.log('onEventClick ~ e', e.target.id);
 
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
 
@@ -33,11 +39,16 @@ async function onEventClick(e) {
 }
 
 function onModalClose(e) {
+  refs.bodyNode.classList.toggle('modal-is-open');
+  refs.modalAnimation.classList.remove('animation-open');
+  refs.modalAnimation.classList.add('animation-close');
   refs.bodyNode.removeEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 }
 function onBackdropClick(e) {
+  
   if (e.target === refs.modalNode) {
+    
     onModalClose();
   }
 }
@@ -56,9 +67,17 @@ function renderModalMarkup(data) {
             <img class='demo' src='${data.images.map(img => img.url)[0]}' alt='event' />
           </div>
           <div class='cards__info'>
-            <span class='cards__title'>INFO</span>
-            <p class='cards__text__info'>${data._embedded.venues[0].generalInfo?.generalRule}
+            <span class='${
+              data._embedded.venues[0].generalInfo?.generalRule ? 'cards__title' : 'visually-hidden'
+            }'>INFO</span>
+            <div class='wrapper-card'>
+            <p class='cards__text__info'>${
+              data._embedded.venues[0].generalInfo?.generalRule
+                ? data._embedded.venues[0].generalInfo.generalRule
+                : ''
+            }
             </p>
+            </div>
             <span class='cards__title'>WHEN</span>
             <p class='cards__text'>${data.dates.start.localDate}
               <br />
@@ -72,26 +91,23 @@ function renderModalMarkup(data) {
               ${data._embedded.venues[0].name}
             </p>
             <span class='cards__title'>WHO</span>
-            <p class='cards__text'>${data._embedded.attractions.map(
+            <p class='cards__text'>${data._embedded.attractions?.map(
               participant => participant.name,
-            )}</p>
+            )}
+              </p>
+            <div class="${data.priceRanges?.[0] ? 'test' : 'visually-hidden'}">
             <span class='cards__title'>PRICES</span>
             <div class="modal-price">
               <svg class="modal__icon-barcode">
-                <use href="./images/svg/sprite.svg#icon-barcode"></use>
+                <use href="${spriteSvg}#icon-barcode"></use>
               </svg>
               <p class='cards__text'>${data.priceRanges?.[0].type} 
               ${data.priceRanges?.[0].min}-
               ${data.priceRanges?.[0].max} ${data.priceRanges?.[0].currency}</p>  
             </div>
-            <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
-            <div class="modal-price">
-                <svg class="modal__icon-barcode">
-                  <use href="./images/svg/sprite.svg#icon-barcode"></use>
-                </svg>
-                <p class='cards__text'>VIP 1000-1500 UAH</p>
-              </div>
-              <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
+            <a class="modal-button" target="_blank" href="${data.url}">BUY TICKETS</a>
+            </div>
+           
           </div>
           </div>
           <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
