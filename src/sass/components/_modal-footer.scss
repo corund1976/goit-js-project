@@ -1,0 +1,50 @@
+.backfrop-footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  //   z-index:;
+}
+.modal-students {
+  //   position: absolute;
+  //   position: fixed;
+
+  top: 50%;
+  //   left: 50%;
+  height: 50vh;
+  //   width: 90vw;
+  border: 2px solid red;
+  //   border-radius: 20%;
+  position: absolute;
+  z-index: 100;
+  //   top: 550px;
+  left: 50%;
+  transition: 0.5s all ease;
+  transform: translate(-50%, -50%) scale(1) translateY(0);
+  width: 50vw;
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  background-color: var(--modal-background);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.modal__closed {
+  position: absolute;
+  z-index: 100;
+  padding: 1px 6px;
+  top: 14px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--modal-background);
+  border: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: var(--header-primary);
+    cursor: pointer;
+  }
+}
