@@ -36,9 +36,15 @@ async function onEventClick(e) {
 
     refs.modalContentNode.innerHTML = '';
     renderModalMarkup(data);
+    const textScroll = document.querySelector('.cards__text__info');
+    const widthLimit = 100;
+    document.documentElement.style.setProperty('--widthLimit', `${widthLimit}px)`);
+    if (textScroll.clientHeight > widthLimit) {
+      await textScroll.classList.add('limite');
+    }
     const loadMore = document.querySelector('.btn-more');
-
     loadMore.addEventListener('click', onShowMore);
+
     async function onShowMore() {
       let {
         _embedded: { attractions },
