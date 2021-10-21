@@ -1,12 +1,12 @@
 .modal {
   position: fixed;
-  overflow: scroll;
+  overflow: auto;
   z-index: 100;
-  top: 80%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 85vw;
-  height: 915px;
+  // height: 915px;
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
   background-color: var(--modal-background);
@@ -40,8 +40,8 @@
   @media screen and (min-width: 768px) {
     padding: 0px 30px;
     left: 50%;
-    width: 595px;
-    height: 831px;
+    max-width: 595px;
+    max-height: 831px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
     transform: translate(-50%, -50%);
@@ -50,8 +50,8 @@
   @media screen and (min-width: 1280px) {
     padding: 0px 30px;
 
-    width: 930px;
-    height: 1023px;
+    max-width: 942px;
+    max-height: 1023px;
 
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
@@ -148,6 +148,7 @@
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
+    // position: absolute;
     max-width: 360px;
     height: 641px;
   }
@@ -177,4 +178,8 @@
 
 .modal-price > .cards__text {
   margin-left: 13px;
+}
+.cards__text__info {
+  max-height: 200px;
+  overflow: auto;
 }
