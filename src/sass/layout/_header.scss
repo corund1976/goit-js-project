@@ -13,6 +13,7 @@
   }
 }
 
+// ======== З А Г О Л О В О К ========
 .header__title {
   width: 220px;
   margin: 0 auto;
@@ -35,6 +36,8 @@
     margin-bottom: 52px;
   }
 }
+
+// ======== Л О Г О Т И П =========
 .header__logo {
   .background-logo {
     width: 210px;
@@ -84,6 +87,7 @@
   }
 }
 
+// ======== П О И С К =========
 form {
   display: flex;
   flex-direction: column;
@@ -101,6 +105,7 @@ form {
       color: var(--placeholder-color);
     }
   }
+
   .form__input {
     margin-bottom: 25px;
 
@@ -109,11 +114,12 @@ form {
       margin-right: 30px;
     }
   }
+
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
   }
-}
+} 
 .form__input,
 .form__select {
   position: relative;

@@ -1,11 +1,15 @@
 .modal {
+  // position: fixed;
   position: absolute;
+  // overflow: scroll;
   z-index: 100;
   top: 550px;
   left: 50%;
   transition: 0.5s all ease;
   transform: translate(-50%, -50%) scale(1) translateY(0);
+  //transform: translate(-50%, -50%);
   width: 85vw;
+  // height: 915px;
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
   background-color: var(--modal-background);
@@ -76,6 +80,8 @@
     color: var(--header-primary);
   }
   &__text {
+    // white-space: nowrap;
+
     display: block;
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
@@ -152,12 +158,15 @@
   margin-right: auto;
   object-fit: cover;
   color: var(--background-primary);
+  // max-width: 100%;
+
   @media screen and(min-width: 768px) {
     display: block;
     max-width: 233px;
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
+    // position: absolute;
     max-width: 360px;
     height: 641px;
   }
@@ -215,16 +224,20 @@
 @keyframes zoom-in {
   from {
     margin-left: -80%;
+    /* transform: scale(0.5); */
   }
   to {
     margin-left: 0%;
+    /* transform: scale(1); */
   }
 }
 @keyframes zoom-out {
   from {
     margin-left: 0%;
+    /* transform: scale(1); */
   }
   to {
     margin-left: 50%;
+    /* transform: scale(0.5); */
   }
 }
