@@ -1,3 +1,4 @@
+/* ========== Сброс ======== */
 h1,
 h2,
 h3,
@@ -8,6 +9,7 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 ul,
 ol {
   margin-top: 0;
@@ -18,6 +20,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
+  // width: 100%;
   height: auto;
 }
 
@@ -28,6 +31,7 @@ li {
 .link {
   text-decoration: none;
 }
+/* ======== Конец Сброс ====== */
 
 body {
   font-family: 'Montserrat', sans-serif;
