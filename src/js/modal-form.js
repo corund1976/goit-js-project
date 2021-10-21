@@ -1,4 +1,5 @@
 // import modalMarkupTpl from '../templates/modal-markup.hbs';
+import spriteSvg from '../images/svg/sprite.svg';
 import { BASE_URL, API_KEY } from './server_request';
 
 const refs = {
@@ -56,8 +57,14 @@ function renderModalMarkup(data) {
             <img class='demo' src='${data.images.map(img => img.url)[0]}' alt='event' />
           </div>
           <div class='cards__info'>
-            <span class='cards__title'>INFO</span>
-            <p class='cards__text__info'>${data._embedded.venues[0].generalInfo?.generalRule}
+            <span class='${
+              data._embedded.venues[0].generalInfo?.generalRule ? 'cards__title' : 'visually-hidden'
+            }'>INFO</span>
+            <p class='cards__text__info'>${
+              data._embedded.venues[0].generalInfo?.generalRule
+                ? data._embedded.venues[0].generalInfo.generalRule
+                : ''
+            }
             </p>
             <span class='cards__title'>WHEN</span>
             <p class='cards__text'>${data.dates.start.localDate}
@@ -74,24 +81,21 @@ function renderModalMarkup(data) {
             <span class='cards__title'>WHO</span>
             <p class='cards__text'>${data._embedded.attractions.map(
               participant => participant.name,
-            )}</p>
+            )}
+              </p>
+            <div class="${data.priceRanges?.[0] ? 'test' : 'visually-hidden'}">
             <span class='cards__title'>PRICES</span>
             <div class="modal-price">
               <svg class="modal__icon-barcode">
-                <use href="./images/svg/sprite.svg#icon-barcode"></use>
+                <use href="${spriteSvg}#icon-barcode"></use>
               </svg>
               <p class='cards__text'>${data.priceRanges?.[0].type} 
               ${data.priceRanges?.[0].min}-
               ${data.priceRanges?.[0].max} ${data.priceRanges?.[0].currency}</p>  
             </div>
-            <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
-            <div class="modal-price">
-                <svg class="modal__icon-barcode">
-                  <use href="./images/svg/sprite.svg#icon-barcode"></use>
-                </svg>
-                <p class='cards__text'>VIP 1000-1500 UAH</p>
-              </div>
-              <a class="modal-button" target="_blank" href="#">BUY TICKETS</a>
+            <a class="modal-button" target="_blank" href="${data.url}">BUY TICKETS</a>
+            </div>
+           
           </div>
           </div>
           <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
