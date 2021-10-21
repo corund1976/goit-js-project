@@ -6,11 +6,11 @@ export const sendServerRequest = async function (userQuery = '', country = '', p
   let url;
 
   if (userQuery === '' && country !== '') {
-    url = `${BASE_URL}events.json?&apikey=${API_KEY}countryCode=${country}&page=${page}`;
+    url = `${BASE_URL}events.json?countryCode=${country}&apikey=${API_KEY}&page=${page}`;
   } else if (country === '') {
     url = `${BASE_URL}events.json?&apikey=${API_KEY}&keyword=${userQuery}&page=${page}`;
   } else if (country !== '' && userQuery !== '') {
-    url = `${BASE_URL}events.json?&apikey=${API_KEY}countryCode=${country}&keyword=${userQuery}&page=${page}`;
+    url = `${BASE_URL}events.json?countryCode=${country}&keyword=${userQuery}&apikey=${API_KEY}&page=${page}`;
   }
   console.log(url);
   const response = await fetch(url);
