@@ -1,62 +1,52 @@
-
-
 .preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    overflow: hidden;
-    background: var(--background-primary);
-    z-index: 1500;
-    color: var(--header-primary);
-    fill: var(--header-primary);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: var(--background-primary);
+  z-index: 1500;
+  color: var(--header-primary);
+  fill: var(--header-primary);
+}
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+  color: var(--header-primary);
+  fill: currentColor;
+  fill: var(--header-primary);
+  stroke: var(--header-primary);
+  stroke-width: 1px;
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
   }
-  
-  
-  .preloader__image {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
-    text-align: center;
-    animation: preloader-rotate 2s infinite linear;
-    color: var(--header-primary);
-    fill: currentColor;
-    fill: var(--header-primary);
-    stroke: var(--header-primary);
-    stroke-width: 1px;
-    
-    @media screen and (min-width: 768px) {
-      width: 200px;
-      height: 200px;
-      margin-top: -100px;
-      margin-left: -100px;
-    }
-  
-    @media screen and (min-width: 1280px) {
-      width: 300px;
-      height: 300px;
-      margin-top: -150px;
-      margin-left: -150px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
   }
-  
-  
-  @keyframes preloader-rotate {
-    100% {
-      transform: rotate(360deg);
-    }
+}
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .loaded_hiding .preloader {
-    transition: 2s opacity;
-    opacity: 0;
-  }
-  
-  .loaded .preloader {
-    display: none;
-  }
+}
+.loaded_hiding .preloader {
+  transition: 2s opacity;
+  opacity: 0;
+}
+.loaded .preloader {
+  display: none;
+}

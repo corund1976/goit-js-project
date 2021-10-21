@@ -1,0 +1,5 @@
+{
+"DEBOUNCE_DELAY" :  "300",
+"BASE_URL": "https://app.ticketmaster.com/discovery/v2/",
+"API_KEY" : "kGyK62KCJILapDAPE9fz0caemViSYQAs"
+}

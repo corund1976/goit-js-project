@@ -1,4 +1,4 @@
-import Pagination from 'tui-pagination'; /* ES6 */
+import Pagination from 'tui-pagination';
 import { renderMarkup } from './main_content_render';
 import { sendServerRequest } from './server_request';
 import { userQuery, country } from './search';
@@ -9,9 +9,7 @@ const options = {
   centerAlign: false,
 };
 const myPagination = new Pagination(container, options);
-
 export const renderPagination = async function (responce) {
-  console.log(responce);
   let totalPages = responce.page.totalPages;
   let pageSize = responce.page.size;
   let totalItems = responce.page.totalElements;
@@ -28,6 +26,5 @@ const onLoadPage = async function (page) {
   renderMarkup(reply);
 };
 myPagination.on('afterMove', event => {
-  const currentPage = event.page;
-  onLoadPage(currentPage);
+  onLoadPage(event.page);
 });

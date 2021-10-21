@@ -11,31 +11,27 @@
 #tui-pagination-container {
   width: 100%;
   height: 30px;
-
+  margin-left: 0px;
+  margin-right: 0px;
   display: inline-block;
   text-align: center;
 }
-
 .tui-page-btn {
   width: 30px;
   height: 30px;
-  //color: var(--white-color);
   color: inherit;
   text-decoration: none;
   padding-left: 5px;
   padding-right: 5px;
   border: 1px solid transparent;
-
   &:hover,
   &:focus {
     color: var(--header-primary);
-    // оставить по желанию либо так либо расскоментировать:)
     border: 1px solid var(--header-primary);
     border-radius: 10px 0 10px 0;
-
     @media screen and (max-width: 768px) {
       //   padding-left: 3px;
-      //   padding-right: 3px;
+      //   padding-right: 3px;zzz
     }
 
     @media screen and (min-width: 1280px) {
