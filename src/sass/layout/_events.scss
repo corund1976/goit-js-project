@@ -21,6 +21,9 @@
   @media screen and (min-width: 1280px) {
     margin-top: -63px;
     margin-left: -70px;
+
+    padding-left: 58px;
+    padding-right: 60px;
   }
 }
 .card__item {
@@ -30,20 +33,17 @@
 
   margin-top: 42px;
   margin-left: 14px;
-  // flex-basis: calc((100% - 28px) / 2);
   flex-basis: calc(270px / 2 - 14px);
 
   @media screen and (min-width: 768px) {
     margin-top: 58px;
     margin-left: 27px;
-    // flex-basis: calc((100% - 81px) / 3);
     flex-basis: calc(100% / 3 - 27px);
   }
 
   @media screen and (min-width: 1280px) {
     margin-top: 63px;
     margin-left: 70px;
-    // flex-basis: calc((100% - 280px) / 4);
     flex-basis: calc(100% / 4 - 70px);
   }
 }
@@ -52,6 +52,8 @@
   font-weight: 700;
   font-size: 14px;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
 
   width: 128px;
   overflow: hidden;
@@ -71,7 +73,7 @@
 }
 .card__item__elements {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   pointer-events: none;
 }
 .card__item__date-to-begin {
@@ -108,13 +110,33 @@
 }
 .marquee-location {
   position: absolute;
+  left: 10px;
 
   height: 15px;
   transform: translateX(0%);
   transition-duration: 5000ms;
   transition-timing-function: linear;
   &:hover {
+    // transform: translateX(calc(-100% + 145px));
+    animation-name: bg-image;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    z-index: -1;
+  }
+}
+@keyframes bg-image {
+  0%{
+    transform: translateX(0%);
+    z-index: -1;
+  }
+  50%{
     transform: translateX(calc(-100% + 145px));
+    z-index: -1;
+  }
+  100%{
+    transform: translateX(0%);
+    z-index: -1;
   }
 }
 
@@ -126,7 +148,6 @@
 //   display: inline-block;
 //   background-repeat: no-repeat;
 // }
-
 
 .card__item__img {
   height: 161px;
@@ -187,7 +208,7 @@
     top: -5px;
   }
   @media screen and (min-width: 1280px) {
-    right: 14px;
+    right: -14px;
   }
 }
 
@@ -208,6 +229,18 @@
   fill: #ffffff;
   display: inline-block;
 }
-.card__item__animation{
+.card__item__animation {
   pointer-events: visible;
+}
+.icon__location-bg{
+  background-color: var(--background-primary);
+  z-index: 20;
+}
+.center-location{
+  display: flex;
+  justify-content: center;
+}
+.j-content{
+  display: flex;
+  justify-content: start;
 }
