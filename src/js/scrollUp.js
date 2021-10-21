@@ -16,6 +16,7 @@ const updateDashoffset = () => {
 
 window.addEventListener('scroll', () => {
   updateDashoffset();
+  
   if (getTop() > offset) {
     scrollUp.classList.add('scroll-up--active');
   } else {
