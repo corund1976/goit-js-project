@@ -10,6 +10,7 @@ const refs = {
   bodyNode: document.querySelector('body'),
   cardNode: document.querySelector('.card .card__item'),
   modalContentNode: document.querySelector('.backdrop .modal-content'),
+  modalAnimation: document.querySelector('.modal'),
 };
 
 refs.eventsCardsList.addEventListener('click', onEventClick);
@@ -23,7 +24,9 @@ async function onEventClick(e) {
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
-
+  refs.bodyNode.classList.toggle('modal-is-open');
+  refs.modalAnimation.classList.add('animation-open');
+  refs.modalAnimation.classList.remove('animation-close');
   console.log('onEventClick ~ e', e.target.id);
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
   console.log('onEventClick ~ response', response);
@@ -35,11 +38,16 @@ async function onEventClick(e) {
 }
 
 function onModalClose(e) {
+  refs.bodyNode.classList.toggle('modal-is-open');
+  refs.modalAnimation.classList.remove('animation-open');
+  refs.modalAnimation.classList.add('animation-close');
   refs.bodyNode.removeEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 }
 function onBackdropClick(e) {
+  
   if (e.target === refs.modalNode) {
+    
     onModalClose();
   }
 }
