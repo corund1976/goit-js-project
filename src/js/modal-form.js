@@ -1,5 +1,7 @@
 import modalMarkupTpl from '../templates/modal-markup.hbs';
-import { BASE_URL, API_KEY } from './server_request';
+import { renderMarkup } from './main_content_render';
+import { BASE_URL, API_KEY, sendServerRequest } from './server_request';
+import { renderPagination} from './pagination_render'
 
 console.log('modalMarkupTpl', modalMarkupTpl);
 
@@ -32,7 +34,25 @@ async function onEventClick(e) {
 
   refs.modalContentNode.innerHTML = '';
   renderModalMarkup(data);
+
+  async function onShowMore() {
+    let {_embedded: {attractions}} = data
+    let artists = attractions.map(item=>item.name).join(',')
+    const serverResponse = await sendServerRequest(artists);
+    onModalClose()
+    // очистка контейнера - вынести в другую функцию?
+    const container = document.querySelector(".card")
+    container.innerHTML = "";
+    // 
+    renderMarkup(serverResponse)
+    renderPagination(serverResponse);
+  }
+
+  const loadMore = document.querySelector('.btn-more');
+  loadMore.addEventListener("click", onShowMore)
 }
+
+
 
 function onModalClose(e) {
   refs.bodyNode.removeEventListener('keydown', onKeyPress);
