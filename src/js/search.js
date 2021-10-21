@@ -5,7 +5,7 @@ import { sendServerRequest } from './server_request';
 import { renderListMarkup } from './country_list_render';
 import { renderPagination } from './pagination_render';
 const searchFieldEl = document.querySelector('#search');
-export const searchByCountryEl = document.querySelector('#country-search');
+const searchByCountryEl = document.querySelector('#country-search-input');
 const DEBOUNCE_DELAY = 300;
 
 // ФУНКЦИЯ ПОИСКА ПО ЗАПРОСУ
@@ -28,8 +28,12 @@ searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
 renderListMarkup(config);
 
 searchByCountryEl.addEventListener('change', e => {
-  country = e.target.value;
+  country = document.querySelector(`#country-search option[value="${e.target.value}"]`).textContent;
   search();
+});
+
+searchByCountryEl.addEventListener('click', e => {
+  searchByCountryEl.value = '';
 });
 
 document.querySelector('form').addEventListener('submit', e => {
