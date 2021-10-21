@@ -1,7 +1,4 @@
 // ФУНКЦИЯ ДЛЯ ЗАПРОСОВ НА СЕРВЕР
-export const BASE_URL = 'https://app.ticketmaster.com/discovery/v2/';
-export const API_KEY = 'kGyK62KCJILapDAPE9fz0caemViSYQAs';
-
 export const sendServerRequest = async function (userQuery = '', country = '', page = 0) {
   let url;
 
@@ -14,7 +11,6 @@ export const sendServerRequest = async function (userQuery = '', country = '', p
   }
   console.log(url);
   const response = await fetch(url);
-
   if (response.status >= 200 && response.status < 300) {
     const events = await response.json();
     return events;

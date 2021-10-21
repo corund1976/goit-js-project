@@ -1,5 +1,6 @@
 import debounce from 'lodash.debounce';
 import config from '../config.json';
+import config_js from '../config_js.json';
 import { renderMarkup } from './main_content_render';
 import { sendServerRequest } from './server_request';
 import { renderListMarkup } from './country_list_render';
@@ -7,9 +8,13 @@ import { renderPagination } from './pagination_render';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const searchFieldEl = document.querySelector('#search');
 const searchByCountryEl = document.querySelector('#country-search-input');
+<<<<<<< HEAD
 const DEBOUNCE_DELAY = 300;
 
 // ФУНКЦИЯ ПОИСКА ПО ЗАПРОСУ
+=======
+
+>>>>>>> test
 export let country;
 export let userQuery;
 export const search = async function () {
@@ -29,9 +34,13 @@ export const search = async function () {
 
   // return reply;
 };
+<<<<<<< HEAD
 
 searchFieldEl.addEventListener('input', debounce(search, DEBOUNCE_DELAY));
 // searchByCountryEl.addEventListener('click', debounce(showCountries, DEBOUNCE_DELAY));
+=======
+searchFieldEl.addEventListener('input', debounce(search, config_js.DEBOUNCE_DELAY));
+>>>>>>> test
 renderListMarkup(config);
 
 searchByCountryEl.addEventListener('change', e => {
