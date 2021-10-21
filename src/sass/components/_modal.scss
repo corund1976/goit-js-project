@@ -9,7 +9,7 @@
   transform: translate(-50%, -50%) scale(1) translateY(0);
   //transform: translate(-50%, -50%);
   width: 85vw;
-  height: 915px;
+  // height: 915px;
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
   background-color: var(--modal-background);
@@ -44,8 +44,8 @@
     padding: 0px 30px;
     top: 493px;
     left: 50%;
-    width: 595px;
-    height: 831px;
+    max-width: 595px;
+    max-height: 831px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
     transform: translate(-50%, -50%);
@@ -53,9 +53,9 @@
 
   @media screen and (min-width: 1280px) {
     padding: 0px 30px;
-    top: 613px;
-    width: 930px;
-    height: 1023px;
+
+    max-width: 942px;
+    max-height: 1023px;
 
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
@@ -167,6 +167,7 @@
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
+    // position: absolute;
     max-width: 360px;
     height: 641px;
   }
@@ -196,36 +197,7 @@
 .modal-price > .cards__text {
   margin-left: 13px;
 }
-.modal-is-open{
-  overflow: hidden;
+.cards__text__info {
+  max-height: 200px;
+  overflow: auto;
 }
-.animation-open {
-  animation-name: zoom-in;
-  animation-duration: 1s;
-}
-.animation-close {
-  animation-name: zoom-out;
-  animation-duration: 0.8s;
-}
-
-@keyframes zoom-in {
-  from {
-    margin-left: -80%;
-    /* transform: scale(0.5); */
-  }
-  to {
-    margin-left: 0%;
-    /* transform: scale(1); */
-  }
-}
-@keyframes zoom-out {
-  from {
-    margin-left: 0%;
-    /* transform: scale(1); */
-  }
-  to {
-    margin-left: 50%;
-    /* transform: scale(0.5); */
-  }
-}
-
