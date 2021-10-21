@@ -70,12 +70,14 @@ function renderModalMarkup(data) {
             <span class='${
               data._embedded.venues[0].generalInfo?.generalRule ? 'cards__title' : 'visually-hidden'
             }'>INFO</span>
+            <div class='wrapper-card'>
             <p class='cards__text__info'>${
               data._embedded.venues[0].generalInfo?.generalRule
                 ? data._embedded.venues[0].generalInfo.generalRule
                 : ''
             }
             </p>
+            </div>
             <span class='cards__title'>WHEN</span>
             <p class='cards__text'>${data.dates.start.localDate}
               <br />
