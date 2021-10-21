@@ -1,6 +1,7 @@
-// import modalMarkupTpl from '../templates/modal-markup.hbs';
+import { renderMarkup } from './main_content_render';
+import { BASE_URL, API_KEY, sendServerRequest } from './server_request';
+import { renderPagination} from './pagination_render'
 import spriteSvg from '../images/svg/sprite.svg';
-import { BASE_URL, API_KEY } from './server_request';
 
 const refs = {
   eventsCardsList: document.querySelector('.events .card'),
@@ -29,6 +30,25 @@ async function onEventClick(e) {
 
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
 
+  refs.modalContentNode.innerHTML = '';
+  renderModalMarkup(data);
+
+  async function onShowMore() {
+    let {_embedded: {attractions}} = data
+    let artists = attractions.map(item=>item.name).join(',')
+    const serverResponse = await sendServerRequest(artists);
+    onModalClose()
+    // очистка контейнера - вынести в другую функцию?
+    const container = document.querySelector(".card")
+    container.innerHTML = "";
+    // 
+    renderMarkup(serverResponse)
+    renderPagination(serverResponse);
+  }
+
+  const loadMore = document.querySelector('.btn-more');
+  loadMore.addEventListener("click", onShowMore)
+
   if (response.status >= 200 && response.status < 300) {
     const data = await response.json();
     console.log('onEventClick ~ data', data);
@@ -37,6 +57,8 @@ async function onEventClick(e) {
     renderModalMarkup(data);
   } else return Promise.reject(console.log('Request error!!!'));
 }
+
+
 
 function onModalClose(e) {
   refs.bodyNode.classList.toggle('modal-is-open');
