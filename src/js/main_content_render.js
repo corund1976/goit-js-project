@@ -1,12 +1,15 @@
 import spriteSvg from '../images/svg/sprite.svg';
+
 export const renderMarkup = function (searchedEvents) {
   let render = '';
   let totalEl;
+
   if (searchedEvents.page.totalElements > searchedEvents.page.size) {
     totalEl = searchedEvents.page.size;
   } else {
     totalEl = searchedEvents.page.totalElements;
   }
+
   for (let i = 0; i < totalEl; i++) {
     if (searchedEvents._embedded?.events?.[i]?.id) {
       render += ` <li class="card__item" id="${searchedEvents._embedded?.events?.[i].id}">
@@ -53,5 +56,6 @@ export const renderMarkup = function (searchedEvents) {
     </li>`;
     }
   }
+  
   document.querySelector('.card').innerHTML = render;
 };
