@@ -1,6 +1,7 @@
+import config_js from '../config_js.json';
 import { renderMarkup } from './main_content_render';
-import { BASE_URL, API_KEY, sendServerRequest } from './server_request';
-import { renderPagination} from './pagination_render'
+import { sendServerRequest } from './server_request';
+import { renderPagination } from './pagination_render';
 import spriteSvg from '../images/svg/sprite.svg';
 
 const refs = {
@@ -19,6 +20,7 @@ refs.modalNode.addEventListener('click', onBackdropClick);
 
 async function onEventClick(e) {
   if (e.target.nodeName !== 'LI') return false;
+  
   e.preventDefault();
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
@@ -26,38 +28,47 @@ async function onEventClick(e) {
   refs.bodyNode.classList.toggle('modal-is-open');
   refs.modalAnimation.classList.add('animation-open');
   refs.modalAnimation.classList.remove('animation-close');
-  console.log('onEventClick ~ e', e.target.id);
 
-  const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
-  const data = await response.json();
-  
-  refs.modalContentNode.innerHTML = '';
-  renderModalMarkup(data);
+  const response = await fetch(
+    `${config_js.BASE_URL}events/${e.target.id}.json?apikey=${config_js.API_KEY}`,
+  );
+  if (response.status >= 200 && response.status < 300) {
+    const data = await response.json();
 
-  async function onShowMore() {
-    let { _embedded: { attractions } } = data;
-    let artists = attractions.map(item => item.name).join(',');
-    const serverResponse = await sendServerRequest(artists);
+    refs.modalContentNode.innerHTML = '';
 
-    onModalClose();
-    // очистка контейнера - вынести в другую функцию?
-    const container = document.querySelector(".card")
-    container.innerHTML = "";
-    // 
-    renderMarkup(serverResponse);
-    renderPagination(serverResponse);
-  }
+    renderModalMarkup(data);
+    
+    const textScroll = document.querySelector('.cards__text__info');
+    const widthLimit = 100;
+    
+    document.documentElement.style.setProperty('--widthLimit', `${widthLimit}px)`);
+    
+    if (textScroll.clientHeight > widthLimit) {
+      await textScroll.classList.add('limite');
+    }
 
-  const loadMore = document.querySelector('.btn-more');
-  loadMore.addEventListener('click', onShowMore);
+    const loadMore = document.querySelector('.btn-more');
+    
+    loadMore.addEventListener('click', onShowMore);
 
-//   if (response.status >= 200 && response.status < 300) {
-//     // const data = await response.json();
-//     console.log('onEventClick ~ data', data);
+    async function onShowMore() {
+      let {
+        _embedded: { attractions },
+      } = data;
+      let artists = attractions.map(item => item.name).join(',');
+      const serverResponse = await sendServerRequest(artists);
 
-//     refs.modalContentNode.innerHTML = '';
-//     renderModalMarkup(data);
-//   } else return Promise.reject(console.log('Request error!!!'));
+      onModalClose();
+
+      const container = document.querySelector('.card');
+
+      container.innerHTML = '';
+
+      renderMarkup(serverResponse);
+      renderPagination(serverResponse);
+    }
+  } else return Promise.reject(console.log('Request error!!!'));
 }
 
 function onModalClose(e) {
@@ -67,13 +78,13 @@ function onModalClose(e) {
   refs.bodyNode.removeEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 }
+
 function onBackdropClick(e) {
-  
   if (e.target === refs.modalNode) {
-    
     onModalClose();
   }
 }
+
 function onKeyPress(e) {
   if (e.code === 'Escape') {
     onModalClose();
@@ -81,7 +92,6 @@ function onKeyPress(e) {
 }
 function renderModalMarkup(data) {
   const markupContent = `
-        
       <div class="modal__form">
         <img class='logo' src='${data.images.map(img => img.url)[2]}' alt='logo-event' />
         <div class='cards'>
@@ -129,7 +139,6 @@ function renderModalMarkup(data) {
             </div>
             <a class="modal-button" target="_blank" href="${data.url}">BUY TICKETS</a>
             </div>
-           
           </div>
           </div>
           <button class='btn-more' data-name=''>MORE FROM THIS AUTHOR</button>
