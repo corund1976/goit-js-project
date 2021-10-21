@@ -3,10 +3,12 @@
   height: 30px;
   display: inline-block;
   text-align: center;
+
   padding-top: 80px;
   padding-bottom: 80px;
   margin-left: 0;
   margin-right: 0;
+
   @media screen and (max-width: 768px) {
     padding-top: 60px;
     padding-bottom: 60px;
