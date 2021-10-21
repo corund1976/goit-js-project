@@ -38,10 +38,12 @@ export const search = async function () {
 };
 
 searchFieldEl.addEventListener('input', debounce(search, config_js.DEBOUNCE_DELAY));
+
 renderListMarkup(config);
 
 searchByCountryEl.addEventListener('change', e => {
   country = document.querySelector(`#country-search option[value="${e.target.value}"]`).textContent;
+
   search();
 });
 
@@ -56,7 +58,9 @@ async function clearFilter() {
   searchFieldEl.value = "";
   searchByCountryEl.value = "";
   containerEl.innerHTML = '';
+
   renderMarkup(serverResponse)
   renderPagination(serverResponse)
 }
+
 clearFilterBtn.addEventListener('click', clearFilter)
