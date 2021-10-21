@@ -17,8 +17,9 @@
 // L A Y O U T
 @import './layout/header';
 @import './layout/events';
-@import './layout/pagination';
 @import './layout/footer';
+@import './layout/pagination';
+@import './layout/bgimg';
 
 // 7 каталогов и один файл main.scss на выходе:
 // base/ — включает глобальные стили, такие как сброс стилей, типография, цвета и т.д.
