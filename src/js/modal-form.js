@@ -29,36 +29,36 @@ async function onEventClick(e) {
   console.log('onEventClick ~ e', e.target.id);
 
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
-
+  const data = await response.json();
+  
   refs.modalContentNode.innerHTML = '';
   renderModalMarkup(data);
 
   async function onShowMore() {
-    let {_embedded: {attractions}} = data
-    let artists = attractions.map(item=>item.name).join(',')
+    let { _embedded: { attractions } } = data;
+    let artists = attractions.map(item => item.name).join(',');
     const serverResponse = await sendServerRequest(artists);
-    onModalClose()
+
+    onModalClose();
     // очистка контейнера - вынести в другую функцию?
     const container = document.querySelector(".card")
     container.innerHTML = "";
     // 
-    renderMarkup(serverResponse)
+    renderMarkup(serverResponse);
     renderPagination(serverResponse);
   }
 
   const loadMore = document.querySelector('.btn-more');
-  loadMore.addEventListener("click", onShowMore)
+  loadMore.addEventListener('click', onShowMore);
 
-  if (response.status >= 200 && response.status < 300) {
-    const data = await response.json();
-    console.log('onEventClick ~ data', data);
+//   if (response.status >= 200 && response.status < 300) {
+//     // const data = await response.json();
+//     console.log('onEventClick ~ data', data);
 
-    refs.modalContentNode.innerHTML = '';
-    renderModalMarkup(data);
-  } else return Promise.reject(console.log('Request error!!!'));
+//     refs.modalContentNode.innerHTML = '';
+//     renderModalMarkup(data);
+//   } else return Promise.reject(console.log('Request error!!!'));
 }
-
-
 
 function onModalClose(e) {
   refs.bodyNode.classList.toggle('modal-is-open');
