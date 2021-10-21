@@ -52,6 +52,8 @@
   font-weight: 700;
   font-size: 14px;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
 
   width: 128px;
   overflow: hidden;
@@ -71,7 +73,7 @@
 }
 .card__item__elements {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   pointer-events: none;
 }
 .card__item__date-to-begin {
@@ -108,13 +110,33 @@
 }
 .marquee-location {
   position: absolute;
+  left: 10px;
 
   height: 15px;
   transform: translateX(0%);
   transition-duration: 5000ms;
   transition-timing-function: linear;
   &:hover {
+    // transform: translateX(calc(-100% + 145px));
+    animation-name: bg-image;
+    animation-duration: 5000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    z-index: -1;
+  }
+}
+@keyframes bg-image {
+  0%{
+    transform: translateX(0%);
+    z-index: -1;
+  }
+  50%{
     transform: translateX(calc(-100% + 145px));
+    z-index: -1;
+  }
+  100%{
+    transform: translateX(0%);
+    z-index: -1;
   }
 }
 
@@ -209,4 +231,16 @@
 }
 .card__item__animation {
   pointer-events: visible;
+}
+.icon__location-bg{
+  background-color: var(--background-primary);
+  z-index: 20;
+}
+.center-location{
+  display: flex;
+  justify-content: center;
+}
+.j-content{
+  display: flex;
+  justify-content: start;
 }
