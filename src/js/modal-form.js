@@ -20,6 +20,7 @@ refs.modalNode.addEventListener('click', onBackdropClick);
 
 async function onEventClick(e) {
   if (e.target.nodeName !== 'LI') return false;
+  
   e.preventDefault();
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
@@ -35,19 +36,26 @@ async function onEventClick(e) {
     const data = await response.json();
 
     refs.modalContentNode.innerHTML = '';
+
     renderModalMarkup(data);
+
     const loadMore = document.querySelector('.btn-more');
 
     loadMore.addEventListener('click', onShowMore);
+
     async function onShowMore() {
       let {
         _embedded: { attractions },
       } = data;
       let artists = attractions.map(item => item.name).join(',');
       const serverResponse = await sendServerRequest(artists);
+
       onModalClose();
+
       const container = document.querySelector('.card');
+
       container.innerHTML = '';
+
       renderMarkup(serverResponse);
       renderPagination(serverResponse);
     }
@@ -61,11 +69,13 @@ function onModalClose(e) {
   refs.bodyNode.removeEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 }
+
 function onBackdropClick(e) {
   if (e.target === refs.modalNode) {
     onModalClose();
   }
 }
+
 function onKeyPress(e) {
   if (e.code === 'Escape') {
     onModalClose();
