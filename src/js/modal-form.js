@@ -1,4 +1,4 @@
-import modalMarkupTpl from '../templates/modal-markup.hbs';
+// import modalMarkupTpl from '../templates/modal-markup.hbs';
 import { BASE_URL, API_KEY } from './server_request';
 
 const refs = {
@@ -15,16 +15,14 @@ refs.modalBtnCloseNode.addEventListener('click', onModalClose);
 refs.modalNode.addEventListener('click', onBackdropClick);
 
 async function onEventClick(e) {
-  // if (e.target.nodeName !== 'LI') return false;
   if (e.target.nodeName !== 'LI') return false;
   e.preventDefault();
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
   refs.modalNode.classList.toggle('is-hidden');
 
-  console.log('onEventClick ~ e', e.target.id);
   const response = await fetch(`${BASE_URL}events/${e.target.id}.json?apikey=${API_KEY}`);
-  console.log('onEventClick ~ response', response);
+
   if (response.status >= 200 && response.status < 300) {
     const data = await response.json();
     console.log('onEventClick ~ data', data);
@@ -49,7 +47,6 @@ function onKeyPress(e) {
   }
 }
 function renderModalMarkup(data) {
-  // console.log('errores', typeof data.priceRanges[0].type);
   const markupContent = `
         
       <div class="modal__form">
