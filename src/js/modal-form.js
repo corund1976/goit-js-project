@@ -138,3 +138,5 @@ function renderModalMarkup(data) {
   `;
   return refs.modalContentNode.insertAdjacentHTML('beforeend', markupContent);
 }
+
+
