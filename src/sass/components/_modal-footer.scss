@@ -1,50 +1,196 @@
-.backfrop-footer {
-  position: absolute;
+.backdrop-footer {
+  position: fixed;
+  z-index: 50;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  background-color: black;
-  //   z-index:;
+  height: 100%;
+  padding: 20px 20px;
+  background-color: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(1px);
+  // opacity: 1;
+  // visibility: visible;
+  transition-delay: 1s;
+  transition: 0.5s ease;
+  transition: 1s ease-in-out;
 }
-.modal-students {
-  //   position: absolute;
-  //   position: fixed;
 
-  top: 50%;
-  //   left: 50%;
-  height: 50vh;
-  //   width: 90vw;
-  border: 2px solid red;
-  //   border-radius: 20%;
+.backdrop-footer.visually-hidden {
+  transition-delay: 1s;
+  transition: 0.5s ease;
+  transition: 1s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-students__body {
   position: absolute;
-  z-index: 100;
-  //   top: 550px;
+  top: 50%;
   left: 50%;
-  transition: 0.5s all ease;
-  transform: translate(-50%, -50%) scale(1) translateY(0);
-  width: 50vw;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90vw;
+  max-width: 450px;
+  overflow: hidden;
+
+  height: 95vh;
+  max-height: 600px;
+  box-shadow: 0px 0px 12px 21px rgba(7, 7, 7, 0.34);
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
-  background-color: var(--modal-background);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  background-image: url(../images/team/work.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .modal__closed {
   position: absolute;
-  z-index: 100;
+  z-index: 50;
   padding: 1px 6px;
   top: 14px;
-  right: 30px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--modal-background);
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 7px 5px rgba(7, 7, 7, 0.34);
   border: none;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
   cursor: pointer;
   &:hover,
   &:focus {
     fill: var(--header-primary);
     cursor: pointer;
   }
+}
+.modal-students__content {
+  padding: 60px 30px;
+  font-size: 30px;
+  li {
+    margin-bottom: 20px;
+  }
+}
+.modal-students__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  background-color: rgb(140, 110, 144);
+  border-radius: 40%;
+  max-width: 350px;
+  margin: 0 auto;
+  color: rgb(10, 10, 10);
+}
+
+.swiper {
+  width: 85%;
+  height: 420px;
+}
+// .github-img {
+//   position: absolute;
+//   top: 305px;
+//   // left: 0;
+//   // bottom: -20;
+//   left: 50px;
+//   width: 50px;
+//   height: 30px;
+// }
+.swiper-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  h3,
+  p {
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .github-icon {
+    width: 20px;
+    height: 20px;
+    fill: black;
+  }
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+.swiper-slide:nth-child(1n) {
+  background-image: url(../images/team/IvanLyciko.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.swiper-slide:nth-child(2n) {
+  background-image: url(../images/team/Team.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(3n) {
+  background-image: url(../images/team/SergheiBudac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(4n) {
+  background-image: url(../images/team/AnnaAndreichiv.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(5n) {
+  background-image: url(../images/team/AndriiMaistrenko.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(6n) {
+  background-image: url(../images/team/AdrianTmocaliuc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(7n) {
+  background-image: url(../images/team/VladKrizjanovsky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(8n) {
+  background-image: url(../images/team/AlexandrCulic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(9n) {
+  background-image: url(../images/team/unknown.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(10n) {
+  background-image: url(../images/team/unknown.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
