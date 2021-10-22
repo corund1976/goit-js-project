@@ -31,12 +31,12 @@ export const search = async function () {
       img.src = 'https://blog.vverh.digital/wp-content/uploads/2020/06/oblojka-404.png';
       document.querySelector('.card').appendChild(img);
     } else {
-      Notify.success(`Yahoo ${reply.page.totalElements} found`);
+      Notify.success(`${reply.page.totalElements} events found in database`);
       document.querySelector('#tui-pagination-container').classList.remove('visually-hidden');
     }
   } catch (error) {
     console.log(error);
-    Notify.failure('Bad request');
+    Notify.failure('No results found');
   }
 };
 
