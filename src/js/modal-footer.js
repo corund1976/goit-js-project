@@ -39,7 +39,7 @@ var swiper = new Swiper('.mySwiper', {
     el: '.swiper-scrollbar',
   },
   autoplay: {
-    delay: 2000,
+    delay: 2500,
     disableOnInteraction: false,
   },
   effect: 'cards',
