@@ -1,0 +1,182 @@
+.backdrop-footer {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+  background-color: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(1px);
+  // opacity: 1;
+  // visibility: visible;
+  transition-delay: 1s;
+  transition: 0.5s ease;
+}
+
+.backdrop-footer.visually-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-students__body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90vw;
+  max-width: 450px;
+  overflow: hidden;
+
+  height: 95vh;
+  max-height: 600px;
+  box-shadow: 0px 0px 7px 5px rgba(82, 82, 82, 0.34);
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  // background-image: url(../images/team/work.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.modal__closed {
+  position: absolute;
+  z-index: 50;
+  padding: 1px 6px;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px 5px rgba(82, 82, 82, 0.34);
+  border: none;
+  border-top-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: var(--header-primary);
+    cursor: pointer;
+  }
+}
+.modal-students__content {
+  padding: 60px 30px;
+  font-size: 30px;
+  li {
+    margin-bottom: 20px;
+  }
+}
+.modal-students__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 900;
+  border-radius: 40%;
+  max-width: 350px;
+  margin: 0 auto;
+  color: var(--header-primary);
+}
+
+.swiper {
+  width: 75%;
+  height: 400px;
+}
+.swiper-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  h3,
+  p {
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .github-icon {
+    width: 20px;
+    height: 20px;
+    fill: black;
+  }
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+.swiper-slide:nth-child(1n) {
+  background-image: url(../images/team/IvanLyciko.jpg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.swiper-slide:nth-child(2n) {
+  background-image: url(../images/team/Team.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(3n) {
+  background-image: url(../images/team/SergheiBudac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(4n) {
+  background-image: url(../images/team/AnnaAndreichiv.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(5n) {
+  background-image: url(../images/team/AndriiMaistrenko.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(6n) {
+  background-image: url(../images/team/AdrianTmocaliuc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(7n) {
+  background-image: url(../images/team/VladKrizjanovsky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(8n) {
+  background-image: url(../images/team/AlexandrCulic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(9n) {
+  background-image: url(../images/team/KaterynaKolomiits.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(10n) {
+  background-image: url(../images/team/VItaliiMalishko.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
