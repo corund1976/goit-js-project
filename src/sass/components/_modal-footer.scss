@@ -34,12 +34,12 @@
 
   height: 95vh;
   max-height: 600px;
-  box-shadow: 0px 0px 12px 21px rgba(7, 7, 7, 0.34);
+  box-shadow: 0px 0px 7px 5px rgba(82, 82, 82, 0.34);
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
-  background-image: url(../images/team/work.jpg);
+  // background-image: url(../images/team/work.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -51,8 +51,8 @@
   right: 14px;
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 0px 7px 5px rgba(7, 7, 7, 0.34);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 7px 5px rgba(82, 82, 82, 0.34);
   border: none;
   border-top-left-radius: 40%;
   border-bottom-right-radius: 40%;
@@ -74,26 +74,16 @@
   text-align: center;
   font-size: 32px;
   font-weight: 900;
-  background-color: rgb(140, 110, 144);
   border-radius: 40%;
   max-width: 350px;
   margin: 0 auto;
-  color: rgb(10, 10, 10);
+  color: var(--header-primary);
 }
 
 .swiper {
-  width: 85%;
-  height: 420px;
+  width: 75%;
+  height: 400px;
 }
-// .github-img {
-//   position: absolute;
-//   top: 305px;
-//   // left: 0;
-//   // bottom: -20;
-//   left: 50px;
-//   width: 50px;
-//   height: 30px;
-// }
 .swiper-slide {
   position: relative;
   display: flex;
@@ -184,13 +174,13 @@
 }
 
 .swiper-slide:nth-child(9n) {
-  background-image: url(../images/team/unknown.jpg);
+  background-image: url(../images/team/KaterynaKolomiits.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .swiper-slide:nth-child(10n) {
-  background-image: url(../images/team/unknown.jpg);
+  background-image: url(../images/team/VItaliiMalishko.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

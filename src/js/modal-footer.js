@@ -38,10 +38,10 @@ var swiper = new Swiper('.mySwiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
-  //   autoplay: {
-  //     delay: 2000,
-  //     disableOnInteraction: false,
-  //   },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
   effect: 'cards',
   grabCursor: true,
 });
