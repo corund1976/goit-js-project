@@ -27,6 +27,9 @@ export const search = async function () {
     if (reply.page.totalElements === 0) {
       document.querySelector('#tui-pagination-container').classList.add('visually-hidden');
       Notify.warning('No result found');
+      const img = document.createElement('img');
+      img.src = 'https://blog.vverh.digital/wp-content/uploads/2020/06/oblojka-404.png';
+      document.querySelector('.card').appendChild(img);
     } else {
       Notify.success(`Yahoo ${reply.page.totalElements} found`);
       document.querySelector('#tui-pagination-container').classList.remove('visually-hidden');
