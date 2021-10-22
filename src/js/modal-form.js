@@ -137,7 +137,7 @@ function renderModalMarkup(data) {
               ${data.priceRanges?.[0].min}-
               ${data.priceRanges?.[0].max} ${data.priceRanges?.[0].currency}</p>  
             </div>
-            <a class="modal-button" target="_blank" href="${data.url}">BUY TICKETS</a>
+            <a class="modal-button" target="_blank" href="${data.url}" rel="noopener noreferrer">BUY TICKETS</a>
             </div>
           </div>
           </div>
