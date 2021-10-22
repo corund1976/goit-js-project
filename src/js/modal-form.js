@@ -20,7 +20,7 @@ refs.modalNode.addEventListener('click', onBackdropClick);
 
 async function onEventClick(e) {
   if (e.target.nodeName !== 'LI') return false;
-  
+
   e.preventDefault();
 
   refs.bodyNode.addEventListener('keydown', onKeyPress);
@@ -38,18 +38,18 @@ async function onEventClick(e) {
     refs.modalContentNode.innerHTML = '';
 
     renderModalMarkup(data);
-    
+
     const textScroll = document.querySelector('.cards__text__info');
     const widthLimit = 100;
-    
+
     document.documentElement.style.setProperty('--widthLimit', `${widthLimit}px)`);
-    
+
     if (textScroll.clientHeight > widthLimit) {
       await textScroll.classList.add('limite');
     }
 
     const loadMore = document.querySelector('.btn-more');
-    
+
     loadMore.addEventListener('click', onShowMore);
 
     async function onShowMore() {
@@ -111,21 +111,39 @@ function renderModalMarkup(data) {
             </p>
             </div>
             <span class='cards__title'>WHEN</span>
-            <p class='cards__text'>${data.dates.start.localDate}
+            <p class='cards__text'>${
+              data?.dates?.start?.localDate ? data?.dates?.start?.localDate : ''
+            }
               <br />
-              ${data.dates.start.localTime} (${data.dates.timezone})
+              ${data?.dates?.start?.localTime ? data?.dates?.start?.localTime : ''} ${
+    data?.dates?.timezone ? `&#40;${data?.dates?.timezone},&#41;` : ''
+  }
             </p>
             <span class='cards__title'>WHERE</span>
-            <p class='cards__text'>${data._embedded.venues[0].city.name},
-             ${data._embedded.venues[0].country.name},
-             ${data._embedded.venues[0].state?.name},
+            <p class='cards__text'>${
+              data?._embedded?.venues?.[0]?.city?.name
+                ? data?._embedded?.venues?.[0]?.city?.name
+                : ''
+            },
+             ${
+               data?._embedded?.venues?.[0]?.country?.name
+                 ? data?._embedded?.venues?.[0]?.country?.name
+                 : ''
+             },
+             ${
+               data?._embedded?.venues?.[0]?.state?.name
+                 ? data?._embedded?.venues?.[0]?.state?.name
+                 : ''
+             },
               <br />
-              ${data._embedded.venues[0].name}
+              ${data?._embedded?.venues?.[0]?.name ? data?._embedded?.venues?.[0]?.name : ''}
             </p>
             <span class='cards__title'>WHO</span>
-            <p class='cards__text'>${data._embedded.attractions?.map(
-              participant => participant.name,
-            )}
+            <p class='cards__text'>${
+              data?._embedded?.attractions?.map(participant => participant?.name)
+                ? data?._embedded?.attractions?.map(participant => participant?.name)
+                : ''
+            }
               </p>
             <div class="${data.priceRanges?.[0] ? 'test' : 'visually-hidden'}">
             <span class='cards__title'>PRICES</span>
@@ -133,9 +151,13 @@ function renderModalMarkup(data) {
               <svg class="modal__icon-barcode">
                 <use href="${spriteSvg}#icon-barcode"></use>
               </svg>
-              <p class='cards__text'>${data.priceRanges?.[0].type} 
-              ${data.priceRanges?.[0].min}-
-              ${data.priceRanges?.[0].max} ${data.priceRanges?.[0].currency}</p>  
+              <p class='cards__text'>${
+                data?.priceRanges?.[0]?.type ? data?.priceRanges?.[0]?.type : ''
+              } 
+              ${data.priceRanges?.[0]?.min ? data.priceRanges?.[0]?.min : ''}-
+              ${data?.priceRanges?.[0]?.max ? data?.priceRanges?.[0]?.max : ''} ${
+    data?.priceRanges?.[0]?.currency ? data?.priceRanges?.[0]?.currency : ''
+  }</p>  
             </div>
             <a class="modal-button" target="_blank" href="${data.url}">BUY TICKETS</a>
             </div>
@@ -147,5 +169,3 @@ function renderModalMarkup(data) {
   `;
   return refs.modalContentNode.insertAdjacentHTML('beforeend', markupContent);
 }
-
-
