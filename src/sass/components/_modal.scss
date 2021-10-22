@@ -1,21 +1,23 @@
 .modal {
-  // position: fixed;
   position: absolute;
-  // overflow: scroll;
   z-index: 100;
   top: 550px;
   left: 50%;
   transition: 0.5s all ease;
   transform: translate(-50%, -50%) scale(1) translateY(0);
-  //transform: translate(-50%, -50%);
   width: 85vw;
-  // height: 915px;
+  max-width: 500px;
+  height: 845px;
   border-top-left-radius: 150px;
   border-bottom-right-radius: 150px;
   background-color: var(--modal-background);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   transform: translate(-50%, -50%) scale(1.1);
+  @media screen and (min-width: 450px) {
+    height: 750px;
+  }
+
   &__form {
     position: relative;
     display: flex;
@@ -45,7 +47,7 @@
     top: 493px;
     left: 50%;
     max-width: 595px;
-    max-height: 831px;
+    height: 800px;
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
     transform: translate(-50%, -50%);
@@ -53,9 +55,9 @@
 
   @media screen and (min-width: 1280px) {
     padding: 0px 30px;
-
+    top: 600px;
     max-width: 942px;
-    max-height: 1023px;
+    height: 990px;
 
     border-top-left-radius: 300px;
     border-bottom-right-radius: 300px;
@@ -80,8 +82,6 @@
     color: var(--header-primary);
   }
   &__text {
-    // white-space: nowrap;
-
     display: block;
     -ms-text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
@@ -158,15 +158,12 @@
   margin-right: auto;
   object-fit: cover;
   color: var(--background-primary);
-  // max-width: 100%;
-
   @media screen and(min-width: 768px) {
     display: block;
     max-width: 233px;
     height: 416px;
   }
   @media screen and(min-width: 1280px) {
-    // position: absolute;
     max-width: 360px;
     height: 641px;
   }
@@ -200,7 +197,7 @@
 }
 .cards__text__info {
   overflow: auto;
-  transition: 5s linear;
+  transition: 15s linear;
   display: inline-block;
 }
 .cards__text__info:hover {
@@ -224,20 +221,16 @@
 @keyframes zoom-in {
   from {
     margin-left: -80%;
-    /* transform: scale(0.5); */
   }
   to {
     margin-left: 0%;
-    /* transform: scale(1); */
   }
 }
 @keyframes zoom-out {
   from {
     margin-left: 0%;
-    /* transform: scale(1); */
   }
   to {
     margin-left: 50%;
-    /* transform: scale(0.5); */
   }
 }

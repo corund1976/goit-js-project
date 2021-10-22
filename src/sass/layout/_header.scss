@@ -13,7 +13,6 @@
   }
 }
 
-// ======== З А Г О Л О В О К ========
 .header__title {
   width: 220px;
   margin: 0 auto;
@@ -36,8 +35,6 @@
     margin-bottom: 52px;
   }
 }
-
-// ======== Л О Г О Т И П =========
 .header__logo {
   .background-logo {
     width: 210px;
@@ -56,6 +53,9 @@
     top: 20px;
     left: 20px;
     z-index: 5;
+    &:hover {
+      cursor: pointer;
+    }
   }
   @media screen and (min-width: 768px) {
     .background-logo {
@@ -88,7 +88,7 @@
 }
 
 // ======== П О И С К =========
-form {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +105,6 @@ form {
       color: var(--placeholder-color);
     }
   }
-
   .form__input {
     margin-bottom: 25px;
 
@@ -114,7 +113,6 @@ form {
       margin-right: 30px;
     }
   }
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
